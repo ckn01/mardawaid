@@ -1,0 +1,78 @@
+---
+import { getSite, mailtoLink } from '../utils/site';
+
+const site = getSite();
+const year = new Date().getFullYear();
+const blurb =
+  site.description.length > 180
+    ? `${site.description.slice(0, 177).trimEnd()}…`
+    : site.description;
+
+const quickLinks = [
+  { label: 'Tentang', href: '/tentang-kami' },
+  { label: 'Klien', href: '/klien' },
+  { label: 'Produk', href: '/produk' },
+  { label: 'Artikel', href: '/artikel' },
+  { label: 'Layanan', href: '/layanan' },
+];
+---
+
+<footer class="mt-auto border-t border-sand-3 bg-sand-2">
+  <div class="mx-auto grid max-w-6xl gap-10 px-4 py-12 md:grid-cols-3">
+    <div>
+      <p class="text-base font-semibold text-sand-12">{site.name}</p>
+      <p class="mt-3 text-sm leading-relaxed text-sand-12/70">{blurb}</p>
+    </div>
+
+    <div>
+      <p class="text-sm font-semibold uppercase tracking-wide text-sand-12/60">Tautan</p>
+      <ul class="mt-3 space-y-2">
+        {
+          quickLinks.map((link) => (
+            <li>
+              <a href={link.href} class="text-sm text-sand-12/80 hover:text-primary">
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <div>
+      <p class="text-sm font-semibold uppercase tracking-wide text-sand-12/60">Kontak</p>
+      <ul class="mt-3 space-y-2 text-sm">
+        <li>
+          <a href={mailtoLink()} class="text-sand-12/80 hover:text-primary">{site.email}</a>
+        </li>
+        <li>
+          <a
+            href={site.social.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-sand-12/80 hover:text-primary"
+          >
+            Instagram
+          </a>
+        </li>
+        <li>
+          <a
+            href={site.social.youtube}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-sand-12/80 hover:text-primary"
+          >
+            YouTube
+          </a>
+        </li>
+        <li class="text-sand-12/60">WhatsApp tersedia</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-sand-3">
+    <p class="mx-auto max-w-6xl px-4 py-4 text-center text-xs text-sand-12/50">
+      © {year} {site.name}
+    </p>
+  </div>
+</footer>
