@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import EmptyState from '../components/EmptyState.astro';
+---
+<BaseLayout
+  title="Learn With Mardawa"
+  description="Materi pembelajaran dan konten edukasi dari PT. Mardawa."
+>
+  <PageHero
+    title="Learn With Mardawa"
+    subtitle="Belajar teknologi dan praktik terbaik bersama Mardawa."
+  />
+  <section class="py-16 md:py-20">
+    <div class="mx-auto max-w-6xl px-4">
+      <p class="mx-auto mb-8 max-w-2xl text-center text-base leading-relaxed text-sand-12/70 md:text-lg">
+        Learn With Mardawa adalah ruang berbagi materi, tips, dan pembelajaran seputar
+        pengembangan sistem, web, dan teknologi informasi.
+      </p>
+      <EmptyState title="Materi Learn With Mardawa segera hadir." />
+    </div>
+  </section>
+</BaseLayout>

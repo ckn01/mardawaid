@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import EmptyState from '../components/EmptyState.astro';
+---
+<BaseLayout title="Foto" description="Galeri foto PT. Mardawa Intiguna Persada.">
+  <PageHero
+    title="Foto"
+    subtitle="Dokumentasi foto kegiatan dan momen bersama Mardawa."
+  />
+  <section class="py-16 md:py-20">
+    <div class="mx-auto max-w-6xl px-4">
+      <EmptyState
+        title="Belum ada foto"
+        body="Galeri foto akan ditampilkan di sini."
+      />
+    </div>
+  </section>
+</BaseLayout>

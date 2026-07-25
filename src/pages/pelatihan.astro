@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import EmptyState from '../components/EmptyState.astro';
+---
+<BaseLayout title="Pelatihan" description="Program pelatihan PT. Mardawa Intiguna Persada.">
+  <PageHero
+    title="Pelatihan"
+    subtitle="Program pelatihan dan transfer pengetahuan dari Mardawa."
+  />
+  <section class="py-16 md:py-20">
+    <div class="mx-auto max-w-6xl px-4">
+      <EmptyState
+        title="Belum ada pelatihan"
+        body="Daftar program pelatihan akan ditampilkan di sini."
+      />
+    </div>
+  </section>
+</BaseLayout>
