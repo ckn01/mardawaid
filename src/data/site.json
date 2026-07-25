@@ -1,0 +1,42 @@
+{
+  "name": "PT. Mardawa Intiguna Persada",
+  "shortName": "Mardawa",
+  "tagline": "Perusahaan Konsultan IT dengan pengalaman di bidang pengembangan aplikasi",
+  "description": "PT. Mardawa Intiguna Persada adalah perusahaan konsultan IT yang memberikan pelayanan jasa konsultasi desain dan teknologi informasi. Kami berkomitmen untuk memberikan solusi inovatif untuk memenuhi kebutuhan era teknologi yang terus berkembang.",
+  "email": "admin@mardawa.id",
+  "whatsapp": "6281220095453",
+  "whatsappMessage": "Halo Admin Mardawa, saya ingin bertanya seputar layanan IT.",
+  "social": {
+    "instagram": "https://www.instagram.com/mardawa.id/",
+    "youtube": "https://www.youtube.com/@MardawaIntigunaPersada"
+  },
+  "showTestimonials": false,
+  "nav": [
+    { "label": "Beranda", "href": "/" },
+    { "label": "Tentang Kami", "href": "/tentang-kami" },
+    { "label": "Klien & Mitra", "href": "/klien" },
+    {
+      "label": "Galeri",
+      "children": [
+        { "label": "Foto", "href": "/foto" },
+        { "label": "Video", "href": "/video" }
+      ]
+    },
+    {
+      "label": "Portofolio",
+      "children": [
+        { "label": "Produk", "href": "/produk" },
+        { "label": "Pelatihan", "href": "/pelatihan" },
+        { "label": "Layanan", "href": "/layanan" }
+      ]
+    },
+    {
+      "label": "Blog",
+      "children": [
+        { "label": "Artikel", "href": "/artikel" },
+        { "label": "Berita", "href": "/berita" }
+      ]
+    },
+    { "label": "Learn With Mardawa", "href": "/learn-with-mardawa" }
+  ]
+}
