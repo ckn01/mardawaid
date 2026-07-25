@@ -17,12 +17,12 @@ interface Props {
 
 const {
   title = 'PT. Mardawa Intiguna Persada',
-  headline = 'IT Solution yang merancang, membangun, dan mengantarkan sistem siap pakai.',
+  headline = 'Merancang, membangun, dan mengantarkan sistem siap pakai.',
   subtitle,
   ctaHref,
-  ctaLabel = 'Diskusi Solusi',
+  ctaLabel = 'Hubungi Kami',
   secondaryHref = '/layanan',
-  secondaryLabel = 'Lihat Solusi',
+  secondaryLabel = 'Lihat Layanan',
   stack = [],
 } = Astro.props;
 ---
@@ -36,7 +36,7 @@ const {
       <div class="inline-flex items-center gap-2 rounded-[var(--radius-pill)] border border-[color-mix(in_srgb,var(--brand)_25%,var(--sand-4))] bg-[var(--brand-soft)] px-3 py-1">
         <span class="size-1.5 rounded-full bg-[var(--brand)]" aria-hidden="true"></span>
         <span class="font-mono text-[0.7rem] font-medium uppercase tracking-[0.08em] text-[var(--brand-dark)]">
-          IT Solution · Jakarta
+          Konsultan IT · Jakarta
         </span>
       </div>
 
@@ -90,11 +90,8 @@ const {
           style="background: linear-gradient(90deg, var(--brand-soft), var(--sand-1));"
         >
           <p class="font-mono text-[0.7rem] font-medium uppercase tracking-[0.08em] text-[var(--brand-dark)]">
-            solution.stack
+            Layanan utama
           </p>
-          <span class="rounded-[var(--radius-pill)] bg-[var(--brand)] px-2 py-0.5 font-mono text-[0.65rem] font-semibold text-white">
-            LIVE
-          </span>
         </div>
         <ul>
           {

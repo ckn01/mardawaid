@@ -20,18 +20,15 @@ const articles = (await getCollection('artikel', ({ data }) => !data.draft))
   .slice(0, 3);
 const showTestimonials = site.showTestimonials && testimonials.length > 0;
 ---
-<BaseLayout
-  title="IT Solution"
-  description={`${site.positioning}: ${site.tagline}`}
->
+<BaseLayout description={site.description}>
   <Hero
     title={site.name}
-    headline="IT Solution yang merancang, membangun, dan mengantarkan sistem siap pakai."
+    headline="Merancang, membangun, dan mengantarkan sistem siap pakai."
     subtitle={site.tagline}
     ctaHref={waLink()}
-    ctaLabel="Diskusi Solusi"
+    ctaLabel="Hubungi Kami"
     secondaryHref="/layanan"
-    secondaryLabel="Lihat Solusi"
+    secondaryLabel="Lihat Layanan"
     stack={services}
   />
   <SectionAbout description={site.description} />
