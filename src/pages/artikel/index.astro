@@ -14,13 +14,13 @@ const articles = (await getCollection('artikel', ({ data }) => !data.draft)).sor
     title="Artikel"
     subtitle="Tulisan seputar teknologi, web, dan solusi digital."
   />
-  <section class="py-16 md:py-20">
-    <div class="mx-auto max-w-6xl px-4">
+  <section class="section">
+    <div class="container-site">
       {
         articles.length === 0 ? (
           <EmptyState title="Belum ada artikel" body="Artikel akan ditampilkan di sini." />
         ) : (
-          <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {articles.map((a) => (
               <ArticleCard
                 title={a.data.title}

@@ -8,12 +8,12 @@ interface Props {
 const { title, alamat, src } = Astro.props;
 ---
 
-<div class="overflow-hidden rounded-2xl border border-sand-3 bg-white shadow-sm">
+<div class="overflow-hidden rounded-[var(--radius-card)] border border-[var(--color-rule)] bg-[var(--color-paper)]">
   <div class="p-5">
-    <h3 class="text-base font-semibold text-sand-12">{title}</h3>
-    <p class="mt-2 text-sm leading-relaxed text-sand-12/70">{alamat}</p>
+    <h3 class="font-semibold tracking-tight text-[var(--color-ink)]">{title}</h3>
+    <p class="mt-2 text-sm leading-relaxed text-[var(--color-ink-2)]">{alamat}</p>
   </div>
-  <div class="aspect-video w-full border-t border-sand-3 bg-sand-2">
+  <div class="aspect-video w-full border-t border-[var(--color-rule)] bg-[var(--color-paper-2)]">
     <iframe
       src={src}
       title={`Peta ${title}`}

@@ -10,22 +10,22 @@ interface Props {
 const { title, href, description, date, kategori } = Astro.props;
 ---
 
-<article class="flex h-full flex-col rounded-2xl border border-sand-3 bg-white p-6 shadow-sm transition hover:shadow-md">
-  <div class="mb-3 flex flex-wrap items-center gap-2 text-xs text-sand-12/60">
-    {kategori && <span class="font-semibold uppercase tracking-wide text-primary">{kategori}</span>}
+<article class="card">
+  <div class="mb-3 flex flex-wrap items-center gap-2 text-xs text-[var(--color-muted)]">
+    {kategori && <span class="font-mono uppercase tracking-wide text-[var(--color-accent)]">{kategori}</span>}
     {date && <time datetime={date}>{date}</time>}
   </div>
-  <h3 class="text-lg font-semibold text-sand-12">
-    <a href={href} class="hover:text-primary">
+  <h3 class="text-lg font-semibold tracking-tight text-[var(--color-ink)]">
+    <a href={href} class="hover:text-[var(--color-accent)]">
       {title}
     </a>
   </h3>
   {
     description && (
-      <p class="mt-2 flex-1 text-sm leading-relaxed text-sand-12/70">{description}</p>
+      <p class="mt-2 flex-1 text-sm leading-relaxed text-[var(--color-ink-2)]">{description}</p>
     )
   }
-  <a href={href} class="mt-4 inline-flex text-sm font-semibold text-primary hover:text-primary-dark">
-    Baca selengkapnya →
+  <a href={href} class="card-link mt-5">
+    Baca →
   </a>
 </article>

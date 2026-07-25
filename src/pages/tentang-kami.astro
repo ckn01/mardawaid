@@ -11,21 +11,28 @@ const site = getSite();
 ---
 <BaseLayout title="Tentang Kami" description={site.description}>
   <PageHero title="Tentang Kami" subtitle={site.tagline} />
-  <section class="py-16 md:py-20">
-    <div class="mx-auto max-w-6xl px-4">
-      <p class="text-sm font-semibold uppercase tracking-wide text-primary">Tentang Kami</p>
-      <h2 class="mt-2 text-2xl font-semibold md:text-3xl">Siapa Kami</h2>
-      <p class="mt-4 max-w-3xl text-base leading-relaxed text-sand-12/70 md:text-lg">
-        {site.description}
-      </p>
+
+  <section class="section">
+    <div class="container-site grid gap-8 lg:grid-cols-12">
+      <div class="lg:col-span-4">
+        <p class="section-label">Profil</p>
+        <h2 class="section-title">Siapa kami</h2>
+      </div>
+      <div class="lg:col-span-8">
+        <p class="max-w-[var(--measure)] text-[var(--text-lg)] leading-relaxed text-[var(--color-ink-2)]">
+          {site.description}
+        </p>
+      </div>
     </div>
   </section>
+
   <TeamGrid items={team} />
-  <section class="py-16 md:py-20 bg-sand-2">
-    <div class="mx-auto max-w-6xl px-4">
-      <p class="text-sm font-semibold uppercase tracking-wide text-primary">Lokasi</p>
-      <h2 class="mt-2 text-2xl font-semibold md:text-3xl">Kantor & Workshop</h2>
-      <div class="mt-8 grid gap-6 md:grid-cols-2">
+
+  <section class="section bg-[var(--color-paper-2)]">
+    <div class="container-site">
+      <p class="section-label">Lokasi</p>
+      <h2 class="section-title">Kantor & workshop</h2>
+      <div class="mt-10 grid gap-4 md:grid-cols-2">
         {maps.map((m) => (
           <MapEmbed title={m.title} alamat={m.alamat} src={m.src} />
         ))}

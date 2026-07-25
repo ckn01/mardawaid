@@ -1,0 +1,47 @@
+/* Hallmark · design-system: design.md · designed-as-app
+ * genre: modern-minimal · theme: custom brand-violet · paper light / geometric-sans / cool-violet
+ */
+:root {
+  --color-paper: oklch(99% 0.004 95);
+  --color-paper-2: oklch(97% 0.006 95);
+  --color-paper-3: oklch(94% 0.008 95);
+  --color-ink: oklch(22% 0.012 80);
+  --color-ink-2: oklch(42% 0.01 80);
+  --color-muted: oklch(55% 0.01 80);
+  --color-rule: oklch(90% 0.006 95);
+  --color-accent: oklch(52% 0.24 285);
+  --color-accent-ink: oklch(99% 0 0);
+  --color-focus: oklch(52% 0.24 285);
+  --color-wa: oklch(62% 0.17 150);
+
+  --font-display: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4.5rem;
+  --space-3xl: 7rem;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-md: 1.0625rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2rem;
+  --text-display: clamp(2.25rem, 4vw + 1rem, 3.75rem);
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-short: 220ms;
+  --radius-card: 12px;
+  --radius-pill: 999px;
+  --radius-input: 10px;
+  --shadow-soft: 0 1px 2px oklch(22% 0.012 80 / 0.04), 0 8px 24px oklch(22% 0.012 80 / 0.06);
+  --measure: 65ch;
+  --container: 72rem;
+}

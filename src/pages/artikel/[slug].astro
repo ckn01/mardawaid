@@ -14,17 +14,24 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 <BaseLayout title={post.data.title} description={post.data.description}>
-  <article class="mx-auto max-w-3xl px-4 py-12">
-    <p class="text-sm text-primary font-medium">{post.data.kategori}</p>
-    <h1 class="mt-2 text-3xl font-semibold">{post.data.title}</h1>
-    <time class="mt-2 block text-sm opacity-70" datetime={post.data.publishDate.toISOString().slice(0, 10)}>
-      {post.data.publishDate.toISOString().slice(0, 10)}
-    </time>
-    <div class="prose mt-8 max-w-none">
-      <Content />
+  <article class="section">
+    <div class="container-site max-w-3xl">
+      <p class="section-label">{post.data.kategori}</p>
+      <h1
+        class="mt-2 font-[family-name:var(--font-display)] text-[clamp(1.75rem,2.5vw+0.5rem,2.5rem)] font-semibold leading-tight tracking-tight text-[var(--color-ink)]"
+        style="font-style: normal"
+      >
+        {post.data.title}
+      </h1>
+      <time class="mt-3 block text-sm text-[var(--color-muted)]" datetime={post.data.publishDate.toISOString().slice(0, 10)}>
+        {post.data.publishDate.toISOString().slice(0, 10)}
+      </time>
+      <div class="prose mt-10 max-w-none">
+        <Content />
+      </div>
+      <p class="mt-12">
+        <a href="/artikel" class="card-link">← Kembali ke Artikel</a>
+      </p>
     </div>
-    <p class="mt-10">
-      <a href="/artikel" class="text-primary font-medium">← Kembali ke Artikel</a>
-    </p>
   </article>
 </BaseLayout>

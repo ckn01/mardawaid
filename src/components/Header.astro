@@ -15,44 +15,47 @@ function parentActive(children: { href: string }[]): boolean {
 }
 ---
 
-<header class="sticky top-0 z-40 border-b border-sand-3 bg-sand-1/95 backdrop-blur-sm">
-  <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
-    <a href="/" class="group shrink-0 leading-tight" aria-label={site.name}>
-      <span class="block text-sm font-semibold text-sand-12 sm:text-base">PT. Mardawa</span>
-      <span class="block text-xs text-sand-12/70 sm:text-sm">Intiguna Persada</span>
+<header class="sticky top-0 z-40 px-3 pt-3 md:px-4 md:pt-4">
+  <div
+    class="container-site flex items-center justify-between gap-3 rounded-[var(--radius-pill)] border border-[var(--color-rule)] bg-[color-mix(in_oklch,var(--color-paper)_88%,transparent)] px-3 py-2 shadow-[var(--shadow-soft)] backdrop-blur-md md:px-4"
+  >
+    <a href="/" class="group min-w-0 shrink-0 leading-tight px-1" aria-label={site.name}>
+      <span class="block text-sm font-semibold tracking-tight text-[var(--color-ink)] sm:text-[0.95rem]">
+        PT. Mardawa
+      </span>
+      <span class="block text-[0.7rem] text-[var(--color-ink-2)] sm:text-xs">Intiguna Persada</span>
     </a>
 
-    <!-- Desktop nav -->
-    <nav class="hidden items-center gap-1 lg:flex" aria-label="Navigasi utama">
+    <nav class="hidden items-center gap-0.5 lg:flex" aria-label="Navigasi utama">
       {
         site.nav.map((item) =>
           item.children ? (
             <details class="group relative">
               <summary
                 class:list={[
-                  'cursor-pointer list-none rounded-md px-3 py-2 text-sm font-medium marker:content-none [&::-webkit-details-marker]:hidden',
+                  'cursor-pointer list-none rounded-[var(--radius-pill)] px-3 py-2 text-sm font-medium marker:content-none [&::-webkit-details-marker]:hidden',
                   parentActive(item.children)
-                    ? 'font-semibold text-primary'
-                    : 'text-sand-12/80 hover:bg-sand-2 hover:text-sand-12',
+                    ? 'bg-[var(--color-paper-3)] font-semibold text-[var(--color-accent)]'
+                    : 'text-[var(--color-ink-2)] hover:bg-[var(--color-paper-2)] hover:text-[var(--color-ink)]',
                 ]}
               >
                 <span class="inline-flex items-center gap-1">
                   {item.label}
-                  <svg class="size-3.5 opacity-60 transition group-open:rotate-180" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <svg class="size-3.5 opacity-50 transition group-open:rotate-180" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                     <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
                   </svg>
                 </span>
               </summary>
-              <ul class="absolute left-0 top-full z-50 mt-1 min-w-44 rounded-lg border border-sand-3 bg-white py-1 shadow-lg">
+              <ul class="absolute left-0 top-full z-50 mt-2 min-w-48 rounded-[var(--radius-card)] border border-[var(--color-rule)] bg-[var(--color-paper)] py-1 shadow-[var(--shadow-soft)]">
                 {item.children.map((child) => (
                   <li>
                     <a
                       href={child.href}
                       class:list={[
-                        'block px-4 py-2 text-sm',
+                        'block px-4 py-2.5 text-sm',
                         isActive(child.href)
-                          ? 'font-semibold text-primary'
-                          : 'text-sand-12/80 hover:bg-sand-2 hover:text-sand-12',
+                          ? 'font-semibold text-[var(--color-accent)]'
+                          : 'text-[var(--color-ink-2)] hover:bg-[var(--color-paper-2)] hover:text-[var(--color-ink)]',
                       ]}
                       aria-current={isActive(child.href) ? 'page' : undefined}
                     >
@@ -66,10 +69,10 @@ function parentActive(children: { href: string }[]): boolean {
             <a
               href={item.href}
               class:list={[
-                'rounded-md px-3 py-2 text-sm font-medium',
+                'rounded-[var(--radius-pill)] px-3 py-2 text-sm font-medium',
                 isActive(item.href!)
-                  ? 'font-semibold text-primary'
-                  : 'text-sand-12/80 hover:bg-sand-2 hover:text-sand-12',
+                  ? 'bg-[var(--color-paper-3)] font-semibold text-[var(--color-accent)]'
+                  : 'text-[var(--color-ink-2)] hover:bg-[var(--color-paper-2)] hover:text-[var(--color-ink)]',
               ]}
               aria-current={isActive(item.href!) ? 'page' : undefined}
             >
@@ -78,37 +81,31 @@ function parentActive(children: { href: string }[]): boolean {
           ),
         )
       }
-      <a
-        href={waLink()}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="ml-2 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white hover:bg-primary-dark"
-      >
+      <a href={waLink()} target="_blank" rel="noopener noreferrer" class="btn btn-primary ml-2 !min-h-9 !px-4 !py-2 text-sm">
         Hubungi Kami
       </a>
     </nav>
 
-    <!-- Mobile: hamburger + CTA -->
     <div class="flex items-center gap-2 lg:hidden">
       <a
         href={waLink()}
         target="_blank"
         rel="noopener noreferrer"
-        class="rounded-lg bg-primary px-3 py-2 text-xs font-semibold text-white hover:bg-primary-dark sm:text-sm"
+        class="btn btn-primary !min-h-9 !px-3 !py-2 text-xs sm:text-sm"
       >
-        Hubungi Kami
+        Hubungi
       </a>
       <details class="relative">
         <summary
-          class="flex size-10 cursor-pointer list-none items-center justify-center rounded-md border border-sand-3 bg-white marker:content-none [&::-webkit-details-marker]:hidden"
+          class="flex size-10 cursor-pointer list-none items-center justify-center rounded-full border border-[var(--color-rule)] bg-[var(--color-paper)] marker:content-none [&::-webkit-details-marker]:hidden"
           aria-label="Buka menu"
         >
           <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" />
+            <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round" />
           </svg>
         </summary>
         <nav
-          class="absolute right-0 top-full z-50 mt-2 w-[min(18rem,calc(100vw-2rem))] rounded-lg border border-sand-3 bg-white py-2 shadow-lg"
+          class="absolute right-0 top-full z-50 mt-2 w-[min(18rem,calc(100vw-1.5rem))] rounded-[var(--radius-card)] border border-[var(--color-rule)] bg-[var(--color-paper)] py-2 shadow-[var(--shadow-soft)]"
           aria-label="Navigasi mobile"
         >
           <ul class="flex flex-col">
@@ -122,8 +119,8 @@ function parentActive(children: { href: string }[]): boolean {
                           class:list={[
                             'block px-4 py-2.5 text-sm',
                             isActive(child.href)
-                              ? 'font-semibold text-primary'
-                              : 'text-sand-12/80 hover:bg-sand-2',
+                              ? 'font-semibold text-[var(--color-accent)]'
+                              : 'text-[var(--color-ink-2)] hover:bg-[var(--color-paper-2)]',
                           ]}
                           aria-current={isActive(child.href) ? 'page' : undefined}
                         >
@@ -138,8 +135,8 @@ function parentActive(children: { href: string }[]): boolean {
                           class:list={[
                             'block px-4 py-2.5 text-sm',
                             isActive(item.href!)
-                              ? 'font-semibold text-primary'
-                              : 'text-sand-12/80 hover:bg-sand-2',
+                              ? 'font-semibold text-[var(--color-accent)]'
+                              : 'text-[var(--color-ink-2)] hover:bg-[var(--color-paper-2)]',
                           ]}
                           aria-current={isActive(item.href!) ? 'page' : undefined}
                         >

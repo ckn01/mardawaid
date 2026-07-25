@@ -11,8 +11,14 @@ const { product } = Astro.props;
 ---
 <BaseLayout title={product.name} description={product.description}>
   <PageHero title={product.name} />
-  <article class="prose mx-auto max-w-3xl px-4 py-12">
-    <p>{product.description}</p>
-    <p><a href="/produk" class="text-primary">← Kembali ke Produk</a></p>
+  <article class="section">
+    <div class="container-site max-w-3xl">
+      <div class="prose max-w-none">
+        <p>{product.description}</p>
+      </div>
+      <p class="mt-10">
+        <a href="/produk" class="card-link">← Kembali ke Produk</a>
+      </p>
+    </div>
   </article>
 </BaseLayout>

@@ -14,8 +14,8 @@ const posts = (await getCollection('berita', ({ data }) => !data.draft)).sort(
     title="Berita"
     subtitle="Kabar dan pengumuman terbaru dari Mardawa."
   />
-  <section class="py-16 md:py-20">
-    <div class="mx-auto max-w-6xl px-4">
+  <section class="section">
+    <div class="container-site">
       {
         posts.length === 0 ? (
           <EmptyState
@@ -23,7 +23,7 @@ const posts = (await getCollection('berita', ({ data }) => !data.draft)).sort(
             body="Berita dan pengumuman akan ditampilkan di sini."
           />
         ) : (
-          <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {posts.map((p) => (
               <ArticleCard
                 title={p.data.title}
