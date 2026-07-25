@@ -6,12 +6,15 @@ Static company website for **Mardawa** (IT services, products, training). Built 
 
 ```sh
 npm install
-npm run dev      # http://localhost:4321
-npm run build    # output → dist/
-npm run preview  # preview production build
+npm run dev                 # http://localhost:4321
+npm run build               # output → dist/
+npm run preview             # preview production build
+npm run pages:build         # same as build (Cloudflare alias)
+npm run pages:deploy        # build + wrangler pages deploy → project mardawaid
+npm run pages:deploy:preview  # deploy branch preview
 ```
 
-Requires **Node 22+** (`engines.node: ">=22.12.0"`).
+Requires **Node 22+** (`engines.node: ">=22.12.0"`). Deploy needs Wrangler login (`npx wrangler login`).
 
 ## Edit content
 
@@ -29,9 +32,17 @@ WhatsApp / email CTAs read `whatsapp` and `email` from `site.json` (helpers in `
 | Setting | Value |
 |---------|--------|
 | Framework | None (static) |
-| Build command | `npm run build` |
+| Build command | `npm run build` / `npm run pages:build` |
 | Build output | `dist` |
 | Node version | **22** |
 | Adapter / Functions | **None** — static only |
+| Wrangler project | `mardawaid` (`pages:deploy`) |
 
 Security and cache headers live in `public/_headers` (copied into `dist` on build).
+
+CLI deploy (after `wrangler login`):
+
+```sh
+npm run pages:deploy          # production
+npm run pages:deploy:preview  # preview branch
+```
