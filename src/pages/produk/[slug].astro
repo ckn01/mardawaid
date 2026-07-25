@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import products from '../../data/products.json';
+
+export function getStaticPaths() {
+  return products.map((p) => ({ params: { slug: p.slug }, props: { product: p } }));
+}
+
+const { product } = Astro.props;
+---
+<BaseLayout title={product.name} description={product.description}>
+  <PageHero title={product.name} />
+  <article class="prose mx-auto max-w-3xl px-4 py-12">
+    <p>{product.description}</p>
+    <p><a href="/produk" class="text-primary">← Kembali ke Produk</a></p>
+  </article>
+</BaseLayout>

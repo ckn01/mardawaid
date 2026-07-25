@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import services from '../../data/services-portfolio.json';
+---
+<BaseLayout title="Layanan" description="Portfolio layanan sistem informasi PT. Mardawa.">
+  <PageHero
+    title="Layanan"
+    subtitle="Sistem dan solusi yang kami bangun untuk instansi dan mitra."
+  />
+  <section class="py-16 md:py-20">
+    <div class="mx-auto grid max-w-6xl gap-6 px-4 sm:grid-cols-2 lg:grid-cols-3">
+      {services.map((s) => (
+        <ProductCard
+          name={s.name}
+          description={s.description}
+          href={`/layanan/${s.slug}`}
+        />
+      ))}
+    </div>
+  </section>
+</BaseLayout>

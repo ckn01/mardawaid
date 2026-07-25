@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import services from '../../data/services-portfolio.json';
+
+export function getStaticPaths() {
+  return services.map((s) => ({ params: { slug: s.slug }, props: { service: s } }));
+}
+
+const { service } = Astro.props;
+---
+<BaseLayout title={service.name} description={service.description}>
+  <PageHero title={service.name} />
+  <article class="prose mx-auto max-w-3xl px-4 py-12">
+    <p>{service.description}</p>
+    <p><a href="/layanan" class="text-primary">← Kembali ke Layanan</a></p>
+  </article>
+</BaseLayout>

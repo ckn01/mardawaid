@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import products from '../../data/products.json';
+---
+<BaseLayout title="Produk" description="Portfolio produk dan sistem yang dikembangkan PT. Mardawa.">
+  <PageHero
+    title="Produk"
+    subtitle="Portfolio produk dan sistem informasi yang kami kembangkan."
+  />
+  <section class="py-16 md:py-20">
+    <div class="mx-auto grid max-w-6xl gap-6 px-4 sm:grid-cols-2 lg:grid-cols-3">
+      {products.map((p) => (
+        <ProductCard
+          name={p.name}
+          description={p.description}
+          href={`/produk/${p.slug}`}
+        />
+      ))}
+    </div>
+  </section>
+</BaseLayout>
