@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Website/Portal",
+    "description": "Kami hadir untuk membantu perusahaan/instansi anda dalam mendesain berbagai macam website/portal sesuai dengan kebutuhan anda",
+    "icon": "monitor"
+  },
+  {
+    "name": "Sistem Informasi Manajemen",
+    "description": "Kami menyediakan layanan pembuatan sistem informasi manajemen untuk kepentingan umum, manajerial, dan berbagai kepentingan lainnya",
+    "icon": "monitor"
+  },
+  {
+    "name": "Aplikasi Mobile / Android",
+    "description": "Kami hadir untuk membantu anda dalam menciptakan sebuah aplikasi mobile/android yang interaktif sesuai dengan kebutuhan anda",
+    "icon": "monitor"
+  },
+  {
+    "name": "Data Warehouse",
+    "description": "Solusi untuk mengintegrasikan berbagai data perusahaan/instansi anda ke dalam satu teknologi Data Warehouse",
+    "icon": "monitor"
+  }
+]
