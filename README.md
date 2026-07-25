@@ -9,7 +9,6 @@ npm install
 npm run dev      # http://localhost:4321
 npm run build    # output → dist/
 npm run preview  # preview production build
-npm run check    # astro check
 ```
 
 Requires **Node 22+** (`engines.node: ">=22.12.0"`).

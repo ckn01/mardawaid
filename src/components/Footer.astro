@@ -1,5 +1,5 @@
 ---
-import { getSite, mailtoLink } from '../utils/site';
+import { getSite, mailtoLink, waLink } from '../utils/site';
 
 const site = getSite();
 const year = new Date().getFullYear();
@@ -65,7 +65,16 @@ const quickLinks = [
             YouTube
           </a>
         </li>
-        <li class="text-sand-12/60">WhatsApp tersedia</li>
+        <li>
+          <a
+            href={waLink()}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-sand-12/80 hover:text-primary"
+          >
+            WhatsApp
+          </a>
+        </li>
       </ul>
     </div>
   </div>

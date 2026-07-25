@@ -21,3 +21,23 @@ body {
 :focus-visible {
   @apply outline-2 outline-offset-2 outline-primary;
 }
+
+/* Minimal prose (no @tailwindcss/typography) */
+.prose {
+  @apply text-base leading-relaxed text-sand-12/90;
+}
+.prose h2 {
+  @apply mt-10 mb-4 text-2xl font-semibold text-sand-12;
+}
+.prose p {
+  @apply my-4;
+}
+.prose ul {
+  @apply my-4 list-disc space-y-2 pl-6;
+}
+.prose a {
+  @apply text-primary underline-offset-2 hover:underline;
+}
+.prose strong {
+  @apply font-semibold text-sand-12;
+}

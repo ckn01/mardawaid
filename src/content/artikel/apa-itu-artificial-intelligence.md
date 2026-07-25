@@ -1,6 +1,6 @@
 ---
 title: "Apa itu Artificial Inteligence? dan Manfaatnya untuk Bisnis"
-description: "Tutorial lengkap membangun backend kuat..."
+description: "Pengertian Artificial Intelligence (AI) dan manfaatnya untuk bisnis modern."
 publishDate: 2026-01-09
 kategori: Teknologi
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Panduan Membuat Website Sendiri dari Nol Tanpa Coding"
-description: "Tutorial lengkap membangun backend kuat..."
+description: "Panduan langkah demi langkah membuat website sendiri dari nol tanpa coding."
 publishDate: 2026-01-09
 kategori: Teknologi
 ---
