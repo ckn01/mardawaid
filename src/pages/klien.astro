@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import ClientGrid from '../components/ClientGrid.astro';
+import clients from '../data/clients.json';
+---
+<BaseLayout title="Klien & Mitra">
+  <PageHero
+    title="Klien & Mitra"
+    subtitle="Kami memiliki beberapa klien dari berbagai instansi dan perusahaan."
+  />
+  <ClientGrid items={clients} />
+</BaseLayout>
