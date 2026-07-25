@@ -3,10 +3,10 @@
     "date": "2026-07-25",
     "scope": "app",
     "macrostructure": "Split Marquee / Workbench / Long Document",
-    "theme": "custom brand-violet",
-    "theme_axes": "light / geometric-sans / cool-violet",
+    "theme": "live-site sand + brand sky (#008ED6)",
+    "theme_axes": "light / geometric-sans / cool-sky",
     "enrichment": "none",
-    "brief": "Hallmark redesign semua page mardawaid — modern-minimal system locked in design.md",
+    "brief": "Hallmark redesign + palette extracted from https://dev.mardawa.id/",
     "design_system": "design.md"
   }
 ]

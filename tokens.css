@@ -1,18 +1,41 @@
 /* Hallmark · design-system: design.md · designed-as-app
- * genre: modern-minimal · theme: custom brand-violet · paper light / geometric-sans / cool-violet
+ * palette sourced from https://dev.mardawa.id/ (sand + brand sky blue)
+ * genre: modern-minimal · paper light / geometric-sans / cool-sky
  */
 :root {
-  --color-paper: oklch(99% 0.004 95);
-  --color-paper-2: oklch(97% 0.006 95);
-  --color-paper-3: oklch(94% 0.008 95);
-  --color-ink: oklch(22% 0.012 80);
-  --color-ink-2: oklch(42% 0.01 80);
-  --color-muted: oklch(55% 0.01 80);
-  --color-rule: oklch(90% 0.006 95);
-  --color-accent: oklch(52% 0.24 285);
-  --color-accent-ink: oklch(99% 0 0);
-  --color-focus: oklch(52% 0.24 285);
-  --color-wa: oklch(62% 0.17 150);
+  /* Neutrals — exact --sand-* from live :root */
+  --sand-1: #fdfdfc;
+  --sand-2: #f9f9f8;
+  --sand-3: #f1f0ef;
+  --sand-4: #e9e8e6;
+  --sand-5: #e2e1de;
+  --sand-6: #dad9d6;
+  --sand-7: #cfceca;
+  --sand-8: #bcbbb5;
+  --sand-9: #8d8d86;
+  --sand-10: #82827c;
+  --sand-11: #63635e;
+  --sand-12: #21201c;
+
+  /* Brand blues — from beranda UI (bg-[#008ED6], gradient to #0066A6) */
+  --brand: #008ed6;
+  --brand-mid: #007abc;
+  --brand-dark: #0066a6;
+  --brand-soft: #e0f2fe; /* sky-100-ish, used around live sky surfaces */
+  --brand-theme: #0ea5e9; /* meta theme-color on live site */
+
+  /* Semantic tokens (Hallmark contract) */
+  --color-paper: var(--sand-1);
+  --color-paper-2: var(--sand-2);
+  --color-paper-3: var(--sand-3);
+  --color-ink: var(--sand-12);
+  --color-ink-2: var(--sand-11);
+  --color-muted: var(--sand-9);
+  --color-rule: var(--sand-4);
+  --color-accent: var(--brand);
+  --color-accent-ink: #ffffff;
+  --color-focus: var(--brand);
+  --color-wa: #25d366;
 
   --font-display: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
   --font-body: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
@@ -41,7 +64,7 @@
   --radius-card: 12px;
   --radius-pill: 999px;
   --radius-input: 10px;
-  --shadow-soft: 0 1px 2px oklch(22% 0.012 80 / 0.04), 0 8px 24px oklch(22% 0.012 80 / 0.06);
+  --shadow-soft: 0 1px 2px rgb(33 32 28 / 0.04), 0 8px 24px rgb(33 32 28 / 0.06);
   --measure: 65ch;
   --container: 72rem;
 }

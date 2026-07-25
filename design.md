@@ -13,20 +13,32 @@ modern-minimal (IT consultant / B2B, restrained)
 - Shell (`/foto`, `/pelatihan`, `/learn-with-mardawa`): shared chrome + EmptyState
 
 ## Theme
-Custom OKLCH anchored on brand violet `#5A45FF`.
+**Sourced from live site** `https://dev.mardawa.id/` (HTML `:root` sand scale + beranda brand blues).
 
-- `--color-paper`     oklch(99% 0.004 95)
-- `--color-paper-2`   oklch(97% 0.006 95)
-- `--color-paper-3`   oklch(94% 0.008 95)
-- `--color-ink`       oklch(22% 0.012 80)
-- `--color-ink-2`     oklch(42% 0.01 80)
-- `--color-muted`     oklch(55% 0.01 80)
-- `--color-rule`      oklch(90% 0.006 95)
-- `--color-accent`    oklch(52% 0.24 285)   /* ≈ #5A45FF */
-- `--color-accent-ink` oklch(99% 0 0)
-- `--color-focus`     oklch(52% 0.24 285)
+Note: Tailwind config on live site also lists `primary: #5A45FF`, but the public marketing UI actually paints **sky brand** (`#008ED6` / gradient to `#0066A6`, `theme-color: #0ea5e9`). We follow the painted UI.
 
-Axes: paper light · display geometric-sans · accent cool-violet
+### Neutrals (exact live `--sand-*`)
+- `--sand-1`  `#fdfdfc` → paper
+- `--sand-2`  `#f9f9f8` → paper-2
+- `--sand-3`  `#f1f0ef` → paper-3
+- `--sand-4`  `#e9e8e6` → rule
+- `--sand-9`  `#8d8d86` → muted
+- `--sand-11` `#63635e` → ink-2
+- `--sand-12` `#21201c` → ink
+
+### Brand blues (exact live beranda classes)
+- `--brand`       `#008ED6`  (primary fill / accent)
+- `--brand-mid`   `#007ABC`
+- `--brand-dark`  `#0066A6`  (hover / gradient end)
+- `--brand-theme` `#0ea5e9`  (meta theme-color)
+- `--brand-soft`  `#e0f2fe`
+
+### Semantic mapping
+- `--color-accent` = `--brand` (`#008ED6`)
+- `--color-accent-ink` = `#ffffff`
+- `--color-focus` = `--brand`
+
+Axes: paper light · display geometric-sans · accent cool-sky
 
 ## Typography
 - Display + body: Instrument Sans (existing brand) — weight ladder, never italic headers
