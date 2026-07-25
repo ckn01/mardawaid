@@ -9,13 +9,30 @@ const { description } = Astro.props;
 <section class="section">
   <div class="container-site grid gap-8 lg:grid-cols-12 lg:gap-12">
     <div class="lg:col-span-4">
-      <p class="section-label">Tentang</p>
-      <h2 class="section-title">Siapa kami</h2>
+      <p class="section-label">Tentang Mardawa</p>
+      <h2 class="section-title">Mitra IT Solution</h2>
+      <p class="mt-3 text-sm text-[var(--sand-11)]">
+        Konsultasi · desain · implementasi sistem informasi.
+      </p>
     </div>
     <div class="lg:col-span-8">
-      <p class="max-w-[var(--measure)] text-[var(--text-lg)] leading-relaxed text-[var(--color-ink-2)]">
+      <p class="max-w-[var(--measure)] text-[var(--text-lg)] leading-relaxed text-[var(--sand-11)]">
         {description}
       </p>
+      <div class="mt-8 grid gap-3 sm:grid-cols-3">
+        <div class="rounded-[var(--radius-card)] border border-[var(--sand-4)] bg-[var(--sand-2)] px-4 py-3">
+          <p class="font-mono text-[0.65rem] uppercase tracking-[0.08em] text-[var(--brand)]">01</p>
+          <p class="mt-1 text-sm font-semibold text-[var(--sand-12)]">Pahami kebutuhan</p>
+        </div>
+        <div class="rounded-[var(--radius-card)] border border-[var(--sand-4)] bg-[var(--sand-2)] px-4 py-3">
+          <p class="font-mono text-[0.65rem] uppercase tracking-[0.08em] text-[var(--brand)]">02</p>
+          <p class="mt-1 text-sm font-semibold text-[var(--sand-12)]">Rancang & bangun</p>
+        </div>
+        <div class="rounded-[var(--radius-card)] border border-[var(--sand-4)] bg-[var(--sand-2)] px-4 py-3">
+          <p class="font-mono text-[0.65rem] uppercase tracking-[0.08em] text-[var(--brand)]">03</p>
+          <p class="mt-1 text-sm font-semibold text-[var(--sand-12)]">Serah-terima & dampingi</p>
+        </div>
+      </div>
       <a href="/tentang-kami" class="card-link mt-6 inline-flex">
         Selengkapnya tentang Mardawa →
       </a>

@@ -12,27 +12,35 @@ interface Props {
 const { items } = Astro.props;
 ---
 
-<section class="section bg-[var(--color-paper-2)]">
-  <div class="container-site">
-    <div class="max-w-2xl">
-      <p class="section-label">Layanan</p>
-      <h2 class="section-title">Pelayanan kami</h2>
-      <p class="mt-3 text-[var(--color-ink-2)]">
-        Empat jalur kerja utama — dari portal publik sampai integrasi data.
-      </p>
+<section class="section relative overflow-hidden bg-[var(--sand-2)]">
+  <div class="container-site relative">
+    <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+      <div class="max-w-2xl">
+        <p class="section-label">Capabilities</p>
+        <h2 class="section-title">Empat jalur solusi IT</h2>
+        <p class="mt-3 text-[var(--sand-11)]">
+          Dari portal publik hingga integrasi data — kami merancang solusi yang dipakai harian, bukan sekadar demo.
+        </p>
+      </div>
+      <a href="/layanan" class="card-link shrink-0">Portofolio solusi →</a>
     </div>
 
-    <ol class="mt-10 grid gap-px overflow-hidden rounded-[var(--radius-card)] border border-[var(--color-rule)] bg-[var(--color-rule)] sm:grid-cols-2">
+    <ol class="mt-10 grid gap-px overflow-hidden rounded-[var(--radius-card)] border border-[var(--sand-4)] bg-[var(--sand-4)] sm:grid-cols-2">
       {
         items.map((item, i) => (
-          <li class="bg-[var(--color-paper)] p-6 md:p-8">
-            <span class="font-mono text-xs text-[var(--color-muted)]">
-              {String(i + 1).padStart(2, '0')}
-            </span>
-            <h3 class="mt-3 text-lg font-semibold tracking-tight text-[var(--color-ink)]">
+          <li class="bg-[var(--sand-1)] p-6 transition hover:bg-[var(--brand-soft)] md:p-8">
+            <div class="flex items-center justify-between gap-3">
+              <span class="font-mono text-xs text-[var(--brand)]">
+                SOL/{String(i + 1).padStart(2, '0')}
+              </span>
+              <span class="rounded-[var(--radius-pill)] border border-[var(--sand-4)] bg-[var(--sand-1)] px-2 py-0.5 font-mono text-[0.65rem] uppercase tracking-wide text-[var(--sand-11)]">
+                solution
+              </span>
+            </div>
+            <h3 class="mt-4 text-lg font-semibold tracking-tight text-[var(--sand-12)]">
               {item.name}
             </h3>
-            <p class="mt-2 text-sm leading-relaxed text-[var(--color-ink-2)]">
+            <p class="mt-2 text-sm leading-relaxed text-[var(--sand-11)]">
               {item.description}
             </p>
           </li>

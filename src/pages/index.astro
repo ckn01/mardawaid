@@ -20,22 +20,29 @@ const articles = (await getCollection('artikel', ({ data }) => !data.draft))
   .slice(0, 3);
 const showTestimonials = site.showTestimonials && testimonials.length > 0;
 ---
-<BaseLayout>
+<BaseLayout
+  title="IT Solution"
+  description={`${site.positioning}: ${site.tagline}`}
+>
   <Hero
     title={site.name}
+    headline="IT Solution yang merancang, membangun, dan mengantarkan sistem siap pakai."
     subtitle={site.tagline}
     ctaHref={waLink()}
-    ctaLabel="Hubungi Kami"
+    ctaLabel="Diskusi Solusi"
+    secondaryHref="/layanan"
+    secondaryLabel="Lihat Solusi"
+    stack={services}
   />
   <SectionAbout description={site.description} />
   <ServiceGrid items={services} />
   <ClientGrid items={clients} />
 
-  <section class="section bg-[var(--color-paper-2)]">
+  <section class="section bg-[var(--sand-2)]">
     <div class="container-site">
       <div class="mb-8 flex flex-wrap items-end justify-between gap-4">
         <div>
-          <p class="section-label">Blog</p>
+          <p class="section-label">Insight</p>
           <h2 class="section-title">Artikel terbaru</h2>
         </div>
         <a href="/artikel" class="card-link">Semua artikel →</a>
@@ -82,7 +89,7 @@ const showTestimonials = site.showTestimonials && testimonials.length > 0;
     <div class="container-site">
       <div class="mb-8 flex flex-wrap items-end justify-between gap-4">
         <div>
-          <p class="section-label">Galeri</p>
+          <p class="section-label">Dokumentasi</p>
           <h2 class="section-title">Video</h2>
         </div>
         <a href="/video" class="card-link">Semua video →</a>

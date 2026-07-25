@@ -4,7 +4,13 @@ A locked design system for this marketing site. Every page redesign reads this f
 Stamp: `/* Hallmark · design-system: design.md · designed-as-app */`
 
 ## Genre
-modern-minimal (IT consultant / B2B, restrained)
+modern-minimal (IT Solution / B2B delivery partner — not generic “clean SaaS”)
+
+## Positioning voice (IT Solution)
+- We are an **IT Solution** firm: design → build → deliver systems for government, education, and business.
+- Language: concrete, delivery-oriented (`solusi`, `sistem`, `integrasi`, `siap pakai`) — not hype, no invented metrics.
+- Visual spirit from live site: sand paper + sky brand `#008ED6`, Instrument Sans, confident but calm.
+- Signal “IT Solution” through: mono solution labels, capability stack, soft brand wash, technical grid underlays (CSS only — no fake dashboards).
 
 ## Macrostructure family
 - Marketing (`/`): Split Marquee — type left, proof strip right; services as index list/cards, not icon-tile SaaS default
