@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Sistem Informasi Pendidikan (SIP)",
+    "slug": "sistem-informasi-pendidikan-sip",
+    "description": "Portal dan Aplikasi Sistem Informasi Pendidikan (SIP) yang dikembangkan oleh PT. Mardawa."
+  },
+  {
+    "name": "SD Negeri 3 Sitiarjo",
+    "slug": "sd-negeri-3-sitiarjo",
+    "description": "Web Sekolah SD Negeri 3 Sitiarjo yang berlokasi di Kab.Malang, Jawa Timur. https://sdn3sitiarjo.ilmusekolah.web.id/"
+  },
+  {
+    "name": "Web Sekolah SD Negeri 2 Bayah Barat",
+    "slug": "web-sekolah-sd-negeri-2-bayah-barat",
+    "description": "Web Sekolah SD Negeri 2 Bayah Barat yang berlokasi di Kab. Lebak Prov. Banten. https://sdn2bayahbarat.ilmusekolah.web.id/"
+  },
+  {
+    "name": "Web Sekolah Yayasan Bina Pekerti Tangerang Barat",
+    "slug": "web-sekolah-yayasan-bina-pekerti-tangerang-barat",
+    "description": "Web Sekolah Yayasan Bina Pekerti yang berlokasi di Tangerang Barat. https://binapekerti.sekolahweb.my.id/"
+  },
+  {
+    "name": "Web Sekolah SMP Unggulan Baitul Manshurin (UBM)",
+    "slug": "web-sekolah-smp-unggulan-baitul-manshurin-ubm",
+    "description": "Web Sekolah SMP Unggulan Baitul Manshurin yang berlokasi di Bandung. https://smpubm.ilmusekolah.web.id/"
+  },
+  {
+    "name": "Web Sekolah SD Unggulan Baitul Manshurin (UBM)",
+    "slug": "web-sekolah-sd-unggulan-baitul-manshurin-ubm",
+    "description": "Web Sekolah SD Unggulan Baitul Manshurin yang berlokasi di Bandung. https://sdubm.ilmusekolah.web.id/"
+  },
+  {
+    "name": "Web Sekolah  SD Negeri Gunung Gede",
+    "slug": "web-sekolah-sd-negeri-gunung-gede",
+    "description": "Web Sekolah SD Negeri Gunung gede yang berlokasi di Bogor, https://sdngununggede.ilmusekolah.web.id/"
+  },
+  {
+    "name": "Web Sekolah Nurul Ilmi Boarding School (NIBS)",
+    "slug": "web-sekolah-nurul-ilmi-boarding-school-nibs",
+    "description": "Web Sekolah Nurul Ilmi Boarding School yang berlokasi di Bandung. https://nibs.sekolahweb.my.id/"
+  },
+  {
+    "name": "Mantap SPMB Online",
+    "slug": "mantap-spmb-online",
+    "description": "Mantap PPDB Online, aplikasi web untuk PPDB, telah sukses menyelenggarakan seleksi peserta didik baru selama empat tahun terakhir."
+  }
+]
