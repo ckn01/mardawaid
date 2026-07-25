@@ -1,0 +1,17 @@
+---
+interface Props {
+  title: string;
+  body?: string;
+}
+
+const { title, body } = Astro.props;
+---
+
+<div class="flex flex-col items-center justify-center px-4 py-16 text-center md:py-24">
+  <h2 class="text-lg font-semibold text-sand-12/70 md:text-xl">{title}</h2>
+  {
+    body && (
+      <p class="mt-2 max-w-md text-sm leading-relaxed text-sand-12/50">{body}</p>
+    )
+  }
+</div>

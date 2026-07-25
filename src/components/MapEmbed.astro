@@ -1,0 +1,26 @@
+---
+interface Props {
+  title: string;
+  alamat: string;
+  src: string;
+}
+
+const { title, alamat, src } = Astro.props;
+---
+
+<div class="overflow-hidden rounded-2xl border border-sand-3 bg-white shadow-sm">
+  <div class="p-5">
+    <h3 class="text-base font-semibold text-sand-12">{title}</h3>
+    <p class="mt-2 text-sm leading-relaxed text-sand-12/70">{alamat}</p>
+  </div>
+  <div class="aspect-video w-full border-t border-sand-3 bg-sand-2">
+    <iframe
+      src={src}
+      title={`Peta ${title}`}
+      class="size-full border-0"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      allowfullscreen
+    />
+  </div>
+</div>

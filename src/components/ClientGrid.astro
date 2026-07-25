@@ -1,0 +1,43 @@
+---
+interface ClientItem {
+  name: string;
+  logo?: string | null;
+}
+
+interface Props {
+  items: ClientItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<section class="py-16 md:py-20">
+  <div class="mx-auto max-w-6xl px-4">
+    <p class="text-sm font-semibold uppercase tracking-wide text-primary">Klien</p>
+    <h2 class="mt-2 text-2xl font-semibold md:text-3xl">Klien Kami</h2>
+    <ul class="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+      {
+        items.map((item) => (
+          <li class="flex flex-col items-center justify-center gap-3 rounded-2xl border border-sand-3 bg-white p-5 text-center shadow-sm transition hover:shadow-md">
+            {item.logo ? (
+              <img
+                src={item.logo}
+                alt={item.name}
+                class="h-12 w-auto max-w-full object-contain"
+                loading="lazy"
+              />
+            ) : (
+              <span
+                class="flex size-12 items-center justify-center rounded-full bg-primary/10 text-lg font-semibold text-primary"
+                aria-hidden="true"
+              >
+                {item.name.trim().charAt(0).toUpperCase()}
+              </span>
+            )}
+            <span class="text-xs font-medium leading-snug text-sand-12/80 sm:text-sm">{item.name}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

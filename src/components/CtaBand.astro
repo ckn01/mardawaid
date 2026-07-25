@@ -1,0 +1,33 @@
+---
+import { getSite, waLink, mailtoLink } from '../utils/site';
+
+const site = getSite();
+---
+
+<section class="py-16 md:py-20">
+  <div class="mx-auto max-w-6xl px-4">
+    <div class="rounded-2xl bg-primary px-6 py-12 text-center text-white shadow-sm md:px-12 md:py-16">
+      <h2 class="text-2xl font-semibold md:text-3xl">Siap Untuk Memulai?</h2>
+      <p class="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-white/90 md:text-base">
+        Konsultasikan kebutuhan IT Anda dengan {site.shortName}. Tim kami siap membantu
+        melalui WhatsApp atau email.
+      </p>
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+        <a
+          href={waLink()}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex rounded-lg bg-white px-5 py-3 text-sm font-semibold text-primary hover:bg-sand-2"
+        >
+          WhatsApp
+        </a>
+        <a
+          href={mailtoLink()}
+          class="inline-flex rounded-lg border border-white/40 px-5 py-3 text-sm font-semibold text-white hover:bg-white/10"
+        >
+          Email
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

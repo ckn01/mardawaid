@@ -1,0 +1,32 @@
+---
+interface Props {
+  title: string;
+  subtitle: string;
+  ctaHref: string;
+  ctaLabel?: string;
+}
+
+const { title, subtitle, ctaHref, ctaLabel = 'Hubungi Kami' } = Astro.props;
+---
+
+<section class="py-16 md:py-24">
+  <div class="mx-auto max-w-6xl px-4">
+    <p class="text-sm font-semibold uppercase tracking-wide text-primary">Konsultan IT</p>
+    <h1 class="mt-3 max-w-3xl text-3xl font-semibold tracking-tight text-sand-12 md:text-5xl">
+      {title}
+    </h1>
+    <p class="mt-4 max-w-2xl text-base leading-relaxed text-sand-12/70 md:text-lg">
+      {subtitle}
+    </p>
+    <div class="mt-8">
+      <a
+        href={ctaHref}
+        target={ctaHref.startsWith('http') ? '_blank' : undefined}
+        rel={ctaHref.startsWith('http') ? 'noopener noreferrer' : undefined}
+        class="inline-flex rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-white hover:bg-primary-dark"
+      >
+        {ctaLabel}
+      </a>
+    </div>
+  </div>
+</section>
