@@ -13,16 +13,12 @@ const site = getSite();
   <PageHero title="Tentang Kami" subtitle={site.tagline} />
 
   <section class="section">
-    <div class="container-site grid gap-8 lg:grid-cols-12">
-      <div class="lg:col-span-4">
-        <p class="section-label">Profil</p>
-        <h2 class="section-title">Siapa kami</h2>
-      </div>
-      <div class="lg:col-span-8">
-        <p class="max-w-[var(--measure)] text-[var(--text-lg)] leading-relaxed text-[var(--color-ink-2)]">
-          {site.description}
-        </p>
-      </div>
+    <div class="container-site">
+      <p class="section-label">Profil</p>
+      <h2 class="section-title">Siapa kami</h2>
+      <p class="mt-5 max-w-[var(--measure)] text-[var(--text-lg)] leading-relaxed text-[var(--color-ink-2)]">
+        {site.description}
+      </p>
     </div>
   </section>
 

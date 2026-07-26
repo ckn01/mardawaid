@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="Mardawa">
+  <rect width="64" height="64" rx="14" fill="#008ED6"/>
+  <path d="M14 46V18h7.2l6.8 16.4L34.8 18H42v28h-6.2V29.2L29.6 46h-5.2l-6.2-16.8V46H14z" fill="#fff"/>
+</svg>

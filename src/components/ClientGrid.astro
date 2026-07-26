@@ -2,6 +2,7 @@
 interface ClientItem {
   name: string;
   logo?: string | null;
+  group?: 'pemerintah' | 'bisnis' | 'pendidikan' | string;
 }
 
 interface Props {
@@ -11,6 +12,35 @@ interface Props {
 }
 
 const { items, bare = false } = Astro.props;
+
+const groupOrder = ['pemerintah', 'bisnis', 'pendidikan'] as const;
+const groupLabel: Record<string, string> = {
+  pemerintah: 'Pemerintah & dinas',
+  bisnis: 'Mitra bisnis',
+  pendidikan: 'Pendidikan & yayasan',
+};
+
+function initials(name: string): string {
+  const words = name
+    .replace(/[()]/g, ' ')
+    .split(/\s+/)
+    .filter((w) => w.length > 0 && !/^(dan|di|kab|kota|prov|sd|smp|sma|pt)$/i.test(w));
+  if (words.length === 0) return name.slice(0, 2).toUpperCase();
+  if (words.length === 1) return words[0].slice(0, 2).toUpperCase();
+  return (words[0][0] + words[1][0]).toUpperCase();
+}
+
+const grouped = groupOrder
+  .map((key) => ({
+    key,
+    label: groupLabel[key],
+    items: items.filter((i) => (i.group ?? 'pendidikan') === key),
+  }))
+  .filter((g) => g.items.length > 0);
+
+const ungrouped = items.filter(
+  (i) => !i.group || !groupOrder.includes(i.group as (typeof groupOrder)[number]),
+);
 ---
 
 <section class:list={[bare ? 'section-tight' : 'section']}>
@@ -26,31 +56,74 @@ const { items, bare = false } = Astro.props;
         </div>
       )
     }
-    <ul class:list={['grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5', !bare && 'mt-10']}>
+
+    <div class:list={['space-y-10', !bare && 'mt-10']}>
       {
-        items.map((item) => (
-          <li class="flex min-h-[7.5rem] flex-col items-center justify-center gap-3 rounded-[var(--radius-card)] border border-[var(--color-rule)] bg-[var(--color-paper)] px-3 py-5 text-center">
-            {item.logo ? (
-              <img
-                src={item.logo}
-                alt={item.name}
-                class="h-10 w-auto max-w-full object-contain"
-                loading="lazy"
-              />
-            ) : (
-              <span
-                class="flex size-10 items-center justify-center rounded-full border border-[var(--color-rule)] bg-[var(--color-paper-2)] text-sm font-semibold text-[var(--color-ink)]"
-                aria-hidden="true"
-              >
-                {item.name.trim().charAt(0).toUpperCase()}
-              </span>
-            )}
-            <span class="text-xs font-medium leading-snug text-[var(--color-ink-2)] sm:text-[0.8rem]">
-              {item.name}
-            </span>
-          </li>
+        grouped.map((group) => (
+          <div>
+            <h3 class="mb-4 font-mono text-[0.7rem] font-medium uppercase tracking-[0.08em] text-[var(--sand-9)]">
+              {group.label}
+            </h3>
+            <ul class="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+              {group.items.map((item) => (
+                <li class="flex min-h-[7.5rem] flex-col items-center justify-center gap-3 rounded-[var(--radius-card)] border border-[var(--color-rule)] bg-[var(--color-paper)] px-3 py-5 text-center">
+                  {item.logo ? (
+                    <img
+                      src={item.logo}
+                      alt=""
+                      width="48"
+                      height="48"
+                      class="size-12 rounded-[12px] object-cover"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <span
+                      class="flex size-12 items-center justify-center rounded-[12px] bg-[var(--brand-soft)] font-mono text-sm font-semibold tracking-tight text-[var(--brand-dark)]"
+                      aria-hidden="true"
+                    >
+                      {initials(item.name)}
+                    </span>
+                  )}
+                  <span class="text-xs font-medium leading-snug text-[var(--color-ink-2)] sm:text-[0.8rem]">
+                    {item.name}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
         ))
       }
-    </ul>
+
+      {
+        ungrouped.length > 0 && (
+          <ul class="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+            {ungrouped.map((item) => (
+              <li class="flex min-h-[7.5rem] flex-col items-center justify-center gap-3 rounded-[var(--radius-card)] border border-[var(--color-rule)] bg-[var(--color-paper)] px-3 py-5 text-center">
+                {item.logo ? (
+                  <img
+                    src={item.logo}
+                    alt=""
+                    width="48"
+                    height="48"
+                    class="size-12 rounded-[12px] object-cover"
+                    loading="lazy"
+                  />
+                ) : (
+                  <span
+                    class="flex size-12 items-center justify-center rounded-[12px] bg-[var(--brand-soft)] font-mono text-sm font-semibold tracking-tight text-[var(--brand-dark)]"
+                    aria-hidden="true"
+                  >
+                    {initials(item.name)}
+                  </span>
+                )}
+                <span class="text-xs font-medium leading-snug text-[var(--color-ink-2)] sm:text-[0.8rem]">
+                  {item.name}
+                </span>
+              </li>
+            ))}
+          </ul>
+        )
+      }
+    </div>
   </div>
 </section>

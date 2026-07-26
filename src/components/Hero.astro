@@ -1,9 +1,4 @@
 ---
-interface StackItem {
-  name: string;
-  description: string;
-}
-
 interface Props {
   title?: string;
   headline?: string;
@@ -12,7 +7,6 @@ interface Props {
   ctaLabel?: string;
   secondaryHref?: string;
   secondaryLabel?: string;
-  stack?: StackItem[];
 }
 
 const {
@@ -23,7 +17,6 @@ const {
   ctaLabel = 'Hubungi Kami',
   secondaryHref = '/layanan',
   secondaryLabel = 'Lihat Layanan',
-  stack = [],
 } = Astro.props;
 ---
 
@@ -31,8 +24,8 @@ const {
   <div class="hero-solution__glow" aria-hidden="true"></div>
   <div class="hero-solution__grid" aria-hidden="true"></div>
 
-  <div class="container-site relative grid items-center gap-12 py-[var(--space-2xl)] lg:grid-cols-12 lg:gap-10 lg:py-[var(--space-3xl)]">
-    <div class="lg:col-span-7">
+  <div class="container-site relative py-[var(--space-2xl)] lg:py-[var(--space-3xl)]">
+    <div class="max-w-3xl">
       <div class="inline-flex items-center gap-2 rounded-[var(--radius-pill)] border border-[color-mix(in_srgb,var(--brand)_25%,var(--sand-4))] bg-[var(--brand-soft)] px-3 py-1">
         <span class="size-1.5 rounded-full bg-[var(--brand)]" aria-hidden="true"></span>
         <span class="font-mono text-[0.7rem] font-medium uppercase tracking-[0.08em] text-[var(--brand-dark)]">
@@ -66,55 +59,22 @@ const {
           {secondaryLabel}
         </a>
       </div>
-
-      <dl class="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6">
-        <div>
-          <dt class="font-mono text-[0.65rem] uppercase tracking-[0.08em] text-[var(--sand-9)]">Domain</dt>
-          <dd class="mt-1 text-sm font-semibold tracking-tight text-[var(--sand-12)]">Instansi · Pendidikan · Bisnis</dd>
-        </div>
-        <div>
-          <dt class="font-mono text-[0.65rem] uppercase tracking-[0.08em] text-[var(--sand-9)]">Delivery</dt>
-          <dd class="mt-1 text-sm font-semibold tracking-tight text-[var(--sand-12)]">Desain · Build · Support</dd>
-        </div>
-        <div class="col-span-2 sm:col-span-1">
-          <dt class="font-mono text-[0.65rem] uppercase tracking-[0.08em] text-[var(--sand-9)]">Fokus</dt>
-          <dd class="mt-1 text-sm font-semibold tracking-tight text-[var(--sand-12)]">Sistem siap operasional</dd>
-        </div>
-      </dl>
     </div>
 
-    <aside class="lg:col-span-5">
-      <div class="overflow-hidden rounded-[var(--radius-card)] border border-[var(--sand-4)] bg-[var(--sand-1)] shadow-[var(--shadow-soft)]">
-        <div
-          class="flex items-center justify-between border-b border-[var(--sand-4)] px-5 py-3"
-          style="background: linear-gradient(90deg, var(--brand-soft), var(--sand-1));"
-        >
-          <p class="font-mono text-[0.7rem] font-medium uppercase tracking-[0.08em] text-[var(--brand-dark)]">
-            Layanan utama
-          </p>
-        </div>
-        <ul>
-          {
-            stack.map((item, i) => (
-              <li
-                class:list={[
-                  'flex gap-4 px-5 py-4',
-                  i < stack.length - 1 && 'border-b border-[var(--sand-4)]',
-                ]}
-              >
-                <span class="font-mono text-xs text-[var(--brand)] tabular-nums">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-                <div class="min-w-0">
-                  <p class="font-semibold tracking-tight text-[var(--sand-12)]">{item.name}</p>
-                  <p class="mt-1 text-sm leading-relaxed text-[var(--sand-11)]">{item.description}</p>
-                </div>
-              </li>
-            ))
-          }
-        </ul>
+    <dl class="mt-12 grid grid-cols-2 gap-4 border-t border-[var(--sand-4)] pt-8 sm:grid-cols-3 sm:gap-8 lg:max-w-3xl">
+      <div>
+        <dt class="font-mono text-[0.65rem] uppercase tracking-[0.08em] text-[var(--sand-9)]">Domain</dt>
+        <dd class="mt-1 text-sm font-semibold tracking-tight text-[var(--sand-12)]">Instansi · Pendidikan · Bisnis</dd>
       </div>
-    </aside>
+      <div>
+        <dt class="font-mono text-[0.65rem] uppercase tracking-[0.08em] text-[var(--sand-9)]">Delivery</dt>
+        <dd class="mt-1 text-sm font-semibold tracking-tight text-[var(--sand-12)]">Desain · Build · Support</dd>
+      </div>
+      <div class="col-span-2 sm:col-span-1">
+        <dt class="font-mono text-[0.65rem] uppercase tracking-[0.08em] text-[var(--sand-9)]">Fokus</dt>
+        <dd class="mt-1 text-sm font-semibold tracking-tight text-[var(--sand-12)]">Sistem siap operasional</dd>
+      </div>
+    </dl>
   </div>
 </section>
 

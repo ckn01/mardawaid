@@ -1,0 +1,44 @@
+---
+interface Props {
+  url: string;
+  title: string;
+}
+
+const { url, title } = Astro.props;
+let host = url;
+try {
+  host = new URL(url).hostname;
+} catch {
+  /* keep raw */
+}
+---
+
+<figure class="overflow-hidden rounded-[var(--radius-card)] border border-[var(--color-rule)] bg-[var(--color-paper)] shadow-[var(--shadow-soft)]">
+  <div class="flex items-center gap-2 border-b border-[var(--color-rule)] bg-[var(--sand-2)] px-4 py-2.5">
+    <span class="flex gap-1.5" aria-hidden="true">
+      <span class="size-2.5 rounded-full bg-[var(--sand-6)]"></span>
+      <span class="size-2.5 rounded-full bg-[var(--sand-6)]"></span>
+      <span class="size-2.5 rounded-full bg-[var(--sand-6)]"></span>
+    </span>
+    <p class="min-w-0 flex-1 truncate rounded-md bg-[var(--sand-1)] px-3 py-1 text-center font-mono text-[0.7rem] text-[var(--sand-11)]">
+      {host}
+    </p>
+  </div>
+  <div
+    class="relative flex min-h-[12rem] flex-col items-center justify-center gap-3 bg-[linear-gradient(160deg,var(--brand-soft)_0%,var(--sand-2)_55%,var(--sand-1)_100%)] px-6 py-10 text-center"
+  >
+    <div class="pointer-events-none absolute inset-0 opacity-40" aria-hidden="true"
+      style="background-image: linear-gradient(to right, color-mix(in srgb, var(--sand-5) 80%, transparent) 1px, transparent 1px), linear-gradient(to bottom, color-mix(in srgb, var(--sand-5) 80%, transparent) 1px, transparent 1px); background-size: 32px 32px;"
+    ></div>
+    <p class="relative text-sm font-semibold tracking-tight text-[var(--sand-12)]">{title}</p>
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="relative btn btn-primary !min-h-9 !px-4 !py-2 text-sm"
+    >
+      Buka situs live →
+    </a>
+  </div>
+  <figcaption class="sr-only">Pratinjau tautan untuk {title}</figcaption>
+</figure>

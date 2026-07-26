@@ -1,58 +1,72 @@
 [
   {
     "name": "Henry Gunawan",
-    "title": "Komisaris"
-  },
-  {
-    "name": "Shandy Aprilianto",
-    "title": "Direktur Marketing Bisnis & Umum"
-  },
-  {
-    "name": "R. Kirka Windiani",
-    "title": "Direktur Keuangan & SDM"
-  },
-  {
-    "name": "Ahmad Apandi",
-    "title": "Direktur Produksi"
-  },
-  {
-    "name": "Margan Sani",
-    "title": "Manajer Umum"
-  },
-  {
-    "name": "Nurninawaty",
-    "title": "Manajer SDM"
-  },
-  {
-    "name": "Intan Fauzia",
-    "title": "Staff"
-  },
-  {
-    "name": "Iola Griselda Agnis",
-    "title": "Staff"
-  },
-  {
-    "name": "Muhammad Bagus Susilo",
-    "title": "Staff"
-  },
-  {
-    "name": "Aulina Sabila Rosada",
-    "title": "Staff"
+    "title": "Komisaris",
+    "rank": 1
   },
   {
     "name": "Ardy Sumardiana",
-    "title": "Komisaris"
+    "title": "Komisaris",
+    "rank": 1
+  },
+  {
+    "name": "Shandy Aprilianto",
+    "title": "Direktur Marketing Bisnis & Umum",
+    "rank": 2
+  },
+  {
+    "name": "R. Kirka Windiani",
+    "title": "Direktur Keuangan & SDM",
+    "rank": 2
+  },
+  {
+    "name": "Ahmad Apandi",
+    "title": "Direktur Produksi",
+    "rank": 2
+  },
+  {
+    "name": "Margan Sani",
+    "title": "Manajer Umum",
+    "rank": 3
+  },
+  {
+    "name": "Nurninawaty",
+    "title": "Manajer SDM",
+    "rank": 3
+  },
+  {
+    "name": "Intan Fauzia",
+    "title": "Staff",
+    "rank": 4
+  },
+  {
+    "name": "Iola Griselda Agnis",
+    "title": "Staff",
+    "rank": 4
+  },
+  {
+    "name": "Muhammad Bagus Susilo",
+    "title": "Staff",
+    "rank": 4
+  },
+  {
+    "name": "Aulina Sabila Rosada",
+    "title": "Staff",
+    "rank": 4
   },
   {
     "name": "Enola Bilqis Halimatussadiyah",
-    "title": "Staff"
+    "title": "Staff",
+    "rank": 4
   },
   {
     "name": "Maudhio Andre Wijaya",
-    "title": "Staff"
+    "title": "Staff",
+    "rank": 4
   },
   {
     "name": "Reza Arfana Rafi",
-    "title": "Staff"
+    "title": "Staff",
+    "rank": 4
   }
 ]

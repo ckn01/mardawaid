@@ -2,6 +2,7 @@
 interface TeamItem {
   name: string;
   title: string;
+  rank?: number;
 }
 
 interface Props {
@@ -9,6 +10,37 @@ interface Props {
 }
 
 const { items } = Astro.props;
+
+const rankMeta: Record<number, { label: string; cols: string }> = {
+  1: { label: 'Komisaris', cols: 'sm:grid-cols-2 lg:grid-cols-2 lg:max-w-2xl' },
+  2: { label: 'Direksi', cols: 'sm:grid-cols-2 lg:grid-cols-3' },
+  3: { label: 'Manajemen', cols: 'sm:grid-cols-2 lg:grid-cols-2 lg:max-w-2xl' },
+  4: { label: 'Staff', cols: 'sm:grid-cols-2 lg:grid-cols-3' },
+};
+
+function rankOf(item: TeamItem): number {
+  if (item.rank) return item.rank;
+  const t = item.title.toLowerCase();
+  if (t.includes('komisaris')) return 1;
+  if (t.includes('direktur')) return 2;
+  if (t.includes('manajer') || t.includes('manager')) return 3;
+  return 4;
+}
+
+function initials(name: string): string {
+  const parts = name.trim().split(/\s+/).filter(Boolean);
+  if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
+  return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+}
+
+const ranks = [1, 2, 3, 4]
+  .map((rank) => ({
+    rank,
+    label: rankMeta[rank].label,
+    cols: rankMeta[rank].cols,
+    people: items.filter((i) => rankOf(i) === rank),
+  }))
+  .filter((g) => g.people.length > 0);
 ---
 
 <section class="section">
@@ -16,24 +48,48 @@ const { items } = Astro.props;
     <div class="max-w-2xl">
       <p class="section-label">Tim</p>
       <h2 class="section-title">Struktur organisasi</h2>
+      <p class="mt-3 text-sm text-[var(--color-ink-2)]">
+        Dari dewan komisaris hingga staff operasional.
+      </p>
     </div>
-    <ul class="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+
+    <div class="mt-10 space-y-10">
       {
-        items.map((item) => (
-          <li class="flex items-start gap-4 rounded-[var(--radius-card)] border border-[var(--color-rule)] bg-[var(--color-paper)] p-5">
-            <span
-              class="flex size-11 shrink-0 items-center justify-center rounded-full border border-[var(--color-rule)] bg-[var(--color-paper-2)] text-sm font-semibold text-[var(--color-ink)]"
-              aria-hidden="true"
-            >
-              {item.name.trim().charAt(0).toUpperCase()}
-            </span>
-            <div class="min-w-0">
-              <h3 class="font-semibold tracking-tight text-[var(--color-ink)]">{item.name}</h3>
-              <p class="mt-0.5 text-sm text-[var(--color-ink-2)]">{item.title}</p>
+        ranks.map((group, gi) => (
+          <div>
+            <div class="mb-4 flex items-center gap-3">
+              <span class="font-mono text-[0.7rem] font-medium uppercase tracking-[0.08em] text-[var(--brand)]">
+                {String(gi + 1).padStart(2, '0')}
+              </span>
+              <h3 class="text-sm font-semibold tracking-tight text-[var(--sand-12)]">
+                {group.label}
+              </h3>
+              <span class="h-px flex-1 bg-[var(--sand-4)]" aria-hidden="true" />
             </div>
-          </li>
+            <ul class:list={['grid gap-3', group.cols]}>
+              {group.people.map((item) => (
+                <li class="flex items-start gap-4 rounded-[var(--radius-card)] border border-[var(--color-rule)] bg-[var(--color-paper)] p-5">
+                  <span
+                    class:list={[
+                      'flex size-11 shrink-0 items-center justify-center rounded-full font-mono text-sm font-semibold',
+                      group.rank <= 2
+                        ? 'bg-[var(--brand-soft)] text-[var(--brand-dark)]'
+                        : 'border border-[var(--color-rule)] bg-[var(--color-paper-2)] text-[var(--color-ink)]',
+                    ]}
+                    aria-hidden="true"
+                  >
+                    {initials(item.name)}
+                  </span>
+                  <div class="min-w-0">
+                    <h4 class="font-semibold tracking-tight text-[var(--color-ink)]">{item.name}</h4>
+                    <p class="mt-0.5 text-sm text-[var(--color-ink-2)]">{item.title}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
         ))
       }
-    </ul>
+    </div>
   </div>
 </section>

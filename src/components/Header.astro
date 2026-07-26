@@ -19,11 +19,20 @@ function parentActive(children: { href: string }[]): boolean {
   <div
     class="container-site flex items-center justify-between gap-3 rounded-[var(--radius-pill)] border border-[var(--color-rule)] bg-[color-mix(in_oklch,var(--color-paper)_88%,transparent)] px-3 py-2 shadow-[var(--shadow-soft)] backdrop-blur-md md:px-4"
   >
-    <a href="/" class="group min-w-0 shrink-0 leading-tight px-1" aria-label={site.name}>
-      <span class="block text-sm font-semibold tracking-tight text-[var(--sand-12)] sm:text-[0.95rem]">
-        PT. Mardawa
+    <a href="/" class="group flex min-w-0 shrink-0 items-center gap-2.5 px-1" aria-label={site.name}>
+      <img
+        src="/images/brand/mark.svg"
+        alt=""
+        width="36"
+        height="36"
+        class="size-9 shrink-0 rounded-[10px]"
+      />
+      <span class="min-w-0 leading-tight">
+        <span class="block text-sm font-semibold tracking-tight text-[var(--sand-12)] sm:text-[0.95rem]">
+          PT. Mardawa
+        </span>
+        <span class="block text-[0.7rem] text-[var(--sand-11)] sm:text-xs">Intiguna Persada</span>
       </span>
-      <span class="block text-[0.7rem] text-[var(--sand-11)] sm:text-xs">Intiguna Persada</span>
     </a>
 
     <nav class="hidden items-center gap-0.5 lg:flex" aria-label="Navigasi utama">

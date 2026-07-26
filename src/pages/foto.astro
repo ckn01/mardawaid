@@ -1,19 +1,73 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
-import EmptyState from '../components/EmptyState.astro';
+import videos from '../data/videos.json';
+import { youtubeId } from '../utils/youtube';
+
+const thumbs = videos
+  .map((v) => {
+    const id = youtubeId(v.youtubeUrl);
+    return id
+      ? {
+          title: v.title,
+          description: v.description,
+          href: v.youtubeUrl,
+          src: `https://img.youtube.com/vi/${id}/hqdefault.jpg`,
+        }
+      : null;
+  })
+  .filter(Boolean);
 ---
 <BaseLayout title="Foto" description="Galeri foto PT. Mardawa Intiguna Persada.">
   <PageHero
     title="Foto"
-    subtitle="Dokumentasi foto kegiatan dan momen bersama Mardawa."
+    subtitle="Dokumentasi kegiatan dan momen bersama Mardawa."
   />
   <section class="section">
     <div class="container-site">
-      <EmptyState
-        title="Belum ada foto"
-        body="Galeri foto akan ditampilkan di sini."
-      />
+      {
+        thumbs.length > 0 ? (
+          <>
+            <p class="mb-8 max-w-[var(--measure)] text-[var(--color-ink-2)]">
+              Galeri foto full-res sedang dikumpulkan. Sementara ini, cuplikan dokumentasi dari video resmi perusahaan:
+            </p>
+            <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {thumbs.map((t) => (
+                <li>
+                  <a
+                    href={t!.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="group block overflow-hidden rounded-[var(--radius-card)] border border-[var(--color-rule)] bg-[var(--color-paper)] no-underline transition hover:border-[color-mix(in_srgb,var(--brand)_28%,var(--sand-4))]"
+                  >
+                    <div class="aspect-video overflow-hidden bg-[var(--sand-3)]">
+                      <img
+                        src={t!.src}
+                        alt=""
+                        class="size-full object-cover transition duration-300 group-hover:scale-[1.02]"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="p-4">
+                      <h2 class="text-sm font-semibold tracking-tight text-[var(--color-ink)] group-hover:text-[var(--brand)]">
+                        {t!.title}
+                      </h2>
+                      <p class="mt-1 line-clamp-2 text-xs leading-relaxed text-[var(--color-ink-2)]">
+                        {t!.description}
+                      </p>
+                    </div>
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <p class="mt-8">
+              <a href="/video" class="card-link">Lihat semua video →</a>
+            </p>
+          </>
+        ) : (
+          <p class="text-[var(--color-ink-2)]">Galeri foto akan ditampilkan di sini.</p>
+        )
+      }
     </div>
   </section>
 </BaseLayout>

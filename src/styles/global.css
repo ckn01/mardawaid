@@ -190,17 +190,37 @@ body {
   color: var(--color-ink);
 }
 
+.prose h3 {
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-2xs);
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: -0.015em;
+  color: var(--color-ink);
+}
+
 .prose p {
   margin-block: var(--space-sm);
 }
 
-.prose ul {
+.prose ul,
+.prose ol {
   margin-block: var(--space-sm);
   padding-left: 1.25rem;
+}
+
+.prose ul {
   list-style: disc;
 }
 
-.prose ul > li + li {
+.prose ol {
+  list-style: decimal;
+}
+
+.prose ul > li + li,
+.prose ol > li + li {
   margin-top: var(--space-2xs);
 }
 
@@ -216,6 +236,44 @@ body {
 .prose strong {
   font-weight: 600;
   color: var(--color-ink);
+}
+
+.prose blockquote {
+  margin-block: var(--space-md);
+  border-left: 2px solid var(--brand);
+  padding-left: var(--space-sm);
+  color: var(--color-ink-2);
+}
+
+.prose table {
+  width: 100%;
+  margin-block: var(--space-md);
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+}
+
+.prose th,
+.prose td {
+  border: 1px solid var(--color-rule);
+  padding: 0.65rem 0.75rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.prose th {
+  background: var(--sand-2);
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.prose hr {
+  margin-block: var(--space-xl);
+  border: 0;
+  border-top: 1px solid var(--color-rule);
+}
+
+.prose-article > :first-child {
+  margin-top: 0;
 }
 
 /* Tailwind bridge helpers still used in templates */

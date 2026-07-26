@@ -3,20 +3,34 @@ interface Props {
   name: string;
   href: string;
   description?: string;
+  type?: string;
 }
 
-const { name, href, description } = Astro.props;
+const typeLabel: Record<string, string> = {
+  sistem: 'Sistem',
+  aplikasi: 'Aplikasi',
+  'web-sekolah': 'Web sekolah',
+};
+
+const { name, href, description, type } = Astro.props;
 ---
 
-<article class="card">
-  <h3 class="text-lg font-semibold tracking-tight text-[var(--color-ink)]">
+<article class="card min-w-0">
+  {
+    type && typeLabel[type] && (
+      <p class="mb-2 font-mono text-[0.65rem] font-medium uppercase tracking-[0.08em] text-[var(--brand)]">
+        {typeLabel[type]}
+      </p>
+    )
+  }
+  <h3 class="text-lg font-semibold tracking-tight text-[var(--color-ink)]" style="overflow-wrap: anywhere; min-width: 0">
     <a href={href} class="hover:text-[var(--color-accent)]">
       {name}
     </a>
   </h3>
   {
     description && (
-      <p class="mt-2 flex-1 text-sm leading-relaxed text-[var(--color-ink-2)] line-clamp-4">
+      <p class="mt-2 flex-1 text-sm leading-relaxed text-[var(--color-ink-2)]">
         {description}
       </p>
     )

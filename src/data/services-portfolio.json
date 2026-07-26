@@ -2,16 +2,31 @@
   {
     "name": "Document Tracker Information System (Dosis)",
     "slug": "document-tracker-information-system-dosis",
-    "description": "DOSIS (Document Tracker Information System) adalah aplikasi manajemen dokumen keuangan proyek."
+    "description": "DOSIS (Document Tracker Information System) adalah aplikasi manajemen dokumen keuangan proyek. Membantu pelacakan, arsip, dan alur dokumen agar lebih tertib dan mudah diaudit.",
+    "highlights": [
+      "Manajemen dokumen keuangan proyek",
+      "Pelacakan dan arsip alur dokumen",
+      "Mendukung proses yang lebih tertib dan siap audit"
+    ]
   },
   {
     "name": "SIL DLH",
     "slug": "sil-dlh",
-    "description": "Sistem Informasi Manajemen Dinas Lingkungan Hidup Kota Bogor yang berfungsi sebagai sumber informasi tentang keadaan lingkungan hidup dan Satuan Kerja Perangkat Daerah Dinas Lingkungan Hidup Kota Bogor."
+    "description": "Sistem Informasi Manajemen Dinas Lingkungan Hidup Kota Bogor. Berfungsi sebagai sumber informasi keadaan lingkungan hidup dan layanan unit kerja Dinas Lingkungan Hidup Kota Bogor.",
+    "highlights": [
+      "SIM untuk Dinas Lingkungan Hidup",
+      "Informasi kondisi lingkungan hidup",
+      "Dukungan layanan unit kerja DLH Kota Bogor"
+    ]
   },
   {
     "name": "SOLUSI",
     "slug": "solusi",
-    "description": "Sistem Operasional Layanan Usaha dan Sarana Promosi UMKM Kota Bogor Dinas Koperasi, Usaha Kecil dan Menengah, Perdagangan dan Perindustrian Pemerintah Kota Bogor."
+    "description": "Sistem Operasional Layanan Usaha dan Sarana Promosi UMKM Kota Bogor. Dibangun untuk Dinas Koperasi, Usaha Kecil dan Menengah, Perdagangan dan Perindustrian Pemerintah Kota Bogor.",
+    "highlights": [
+      "Layanan operasional UMKM",
+      "Sarana promosi usaha",
+      "Dibangun untuk dinas koperasi & UMKM Kota Bogor"
+    ]
   }
 ]

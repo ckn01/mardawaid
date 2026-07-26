@@ -1,82 +1,102 @@
 [
   {
-    "name": "SD Negeri 3 Sitiarjo",
-    "logo": null
-  },
-  {
-    "name": "SD Negeri 2 Bayah Barat",
-    "logo": null
-  },
-  {
-    "name": "Yayasan Bina Pekerti Tangerang Barat",
-    "logo": null
-  },
-  {
-    "name": "SMP Unggulan Baitul Manshurin",
-    "logo": null
-  },
-  {
-    "name": "SD Unggulan Baitul Manshurin",
-    "logo": null
-  },
-  {
-    "name": "SD Negeri Gunung Gede",
-    "logo": null
-  },
-  {
-    "name": "Nurul Ilmi Boarding School",
-    "logo": null
-  },
-  {
-    "name": "Sekolah RAC Bandung",
-    "logo": null
-  },
-  {
-    "name": "PT Cipta Multi Inovation",
-    "logo": null
-  },
-  {
-    "name": "Opstore Indonesia",
-    "logo": null
-  },
-  {
-    "name": "Dinas Pendidikan Kab Kutai Barat",
-    "logo": null
-  },
-  {
-    "name": "Dinas Pendidikan Kab Sleman",
-    "logo": null
+    "name": "Kementerian Pendidikan Kebudayaan Riset dan Teknologi",
+    "logo": "/images/clients/kementerian-pendidikan-kebudayaan-riset-dan-tekn.svg",
+    "group": "pemerintah"
   },
   {
     "name": "Dinas Pendidikan dan Olahraga Prov DIY",
-    "logo": null
+    "logo": "/images/clients/dinas-pendidikan-dan-olahraga-prov-diy.svg",
+    "group": "pemerintah"
   },
   {
-    "name": "Dinas UMKM Kota Bogor",
-    "logo": null
+    "name": "Dinas Pendidikan Kab Kutai Barat",
+    "logo": "/images/clients/dinas-pendidikan-kab-kutai-barat.svg",
+    "group": "pemerintah"
   },
   {
-    "name": "Dinas Pendidikan Kabupaten Bireuen",
-    "logo": null
-  },
-  {
-    "name": "Dinas Lingkungan Hidup Kota Bogor",
-    "logo": null
-  },
-  {
-    "name": "Kementerian Pendidikan Kebudayaan Riset dan Teknologi",
-    "logo": null
-  },
-  {
-    "name": "Dinas Pendidikan Kota Palembang",
-    "logo": null
+    "name": "Dinas Pendidikan Kab Sleman",
+    "logo": "/images/clients/dinas-pendidikan-kab-sleman.svg",
+    "group": "pemerintah"
   },
   {
     "name": "Dinas Pendidikan Kota Bogor",
-    "logo": null
+    "logo": "/images/clients/dinas-pendidikan-kota-bogor.svg",
+    "group": "pemerintah"
+  },
+  {
+    "name": "Dinas Pendidikan Kota Palembang",
+    "logo": "/images/clients/dinas-pendidikan-kota-palembang.svg",
+    "group": "pemerintah"
   },
   {
     "name": "Dinas Pendidikan Kota Cilegon",
-    "logo": null
+    "logo": "/images/clients/dinas-pendidikan-kota-cilegon.svg",
+    "group": "pemerintah"
+  },
+  {
+    "name": "Dinas Pendidikan Kabupaten Bireuen",
+    "logo": "/images/clients/dinas-pendidikan-kabupaten-bireuen.svg",
+    "group": "pemerintah"
+  },
+  {
+    "name": "Dinas Lingkungan Hidup Kota Bogor",
+    "logo": "/images/clients/dinas-lingkungan-hidup-kota-bogor.svg",
+    "group": "pemerintah"
+  },
+  {
+    "name": "Dinas UMKM Kota Bogor",
+    "logo": "/images/clients/dinas-umkm-kota-bogor.svg",
+    "group": "pemerintah"
+  },
+  {
+    "name": "PT Cipta Multi Inovation",
+    "logo": "/images/clients/pt-cipta-multi-inovation.svg",
+    "group": "bisnis"
+  },
+  {
+    "name": "Opstore Indonesia",
+    "logo": "/images/clients/opstore-indonesia.svg",
+    "group": "bisnis"
+  },
+  {
+    "name": "Yayasan Bina Pekerti Tangerang Barat",
+    "logo": "/images/clients/yayasan-bina-pekerti-tangerang-barat.svg",
+    "group": "pendidikan"
+  },
+  {
+    "name": "Nurul Ilmi Boarding School",
+    "logo": "/images/clients/nurul-ilmi-boarding-school.svg",
+    "group": "pendidikan"
+  },
+  {
+    "name": "SMP Unggulan Baitul Manshurin",
+    "logo": "/images/clients/smp-unggulan-baitul-manshurin.svg",
+    "group": "pendidikan"
+  },
+  {
+    "name": "SD Unggulan Baitul Manshurin",
+    "logo": "/images/clients/sd-unggulan-baitul-manshurin.svg",
+    "group": "pendidikan"
+  },
+  {
+    "name": "Sekolah RAC Bandung",
+    "logo": "/images/clients/sekolah-rac-bandung.svg",
+    "group": "pendidikan"
+  },
+  {
+    "name": "SD Negeri 3 Sitiarjo",
+    "logo": "/images/clients/sd-negeri-3-sitiarjo.svg",
+    "group": "pendidikan"
+  },
+  {
+    "name": "SD Negeri 2 Bayah Barat",
+    "logo": "/images/clients/sd-negeri-2-bayah-barat.svg",
+    "group": "pendidikan"
+  },
+  {
+    "name": "SD Negeri Gunung Gede",
+    "logo": "/images/clients/sd-negeri-gunung-gede.svg",
+    "group": "pendidikan"
   }
 ]

@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import SectionAbout from '../components/SectionAbout.astro';
 import ServiceGrid from '../components/ServiceGrid.astro';
+import PortfolioStrip from '../components/PortfolioStrip.astro';
 import ClientGrid from '../components/ClientGrid.astro';
 import ArticleCard from '../components/ArticleCard.astro';
 import VideoCard from '../components/VideoCard.astro';
@@ -10,6 +11,8 @@ import CtaBand from '../components/CtaBand.astro';
 import { getSite, waLink } from '../utils/site';
 import { getCollection } from 'astro:content';
 import services from '../data/services.json';
+import servicesPortfolio from '../data/services-portfolio.json';
+import products from '../data/products.json';
 import clients from '../data/clients.json';
 import videos from '../data/videos.json';
 import testimonials from '../data/testimonials.json';
@@ -19,6 +22,19 @@ const articles = (await getCollection('artikel', ({ data }) => !data.draft))
   .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
   .slice(0, 3);
 const showTestimonials = site.showTestimonials && testimonials.length > 0;
+
+const portfolioProducts = products.slice(0, 3).map((p) => ({
+  name: p.name,
+  description: p.description,
+  href: `/produk/${p.slug}`,
+  kind: p.type === 'web-sekolah' ? 'Web sekolah' : p.type === 'aplikasi' ? 'Aplikasi' : 'Sistem',
+}));
+const portfolioServices = servicesPortfolio.map((s) => ({
+  name: s.name,
+  description: s.description,
+  href: `/layanan/${s.slug}`,
+  kind: 'Layanan',
+}));
 ---
 <BaseLayout description={site.description}>
   <Hero
@@ -29,10 +45,10 @@ const showTestimonials = site.showTestimonials && testimonials.length > 0;
     ctaLabel="Hubungi Kami"
     secondaryHref="/layanan"
     secondaryLabel="Lihat Layanan"
-    stack={services}
   />
   <SectionAbout description={site.description} />
   <ServiceGrid items={services} />
+  <PortfolioStrip products={portfolioProducts} services={portfolioServices} />
   <ClientGrid items={clients} />
 
   <section class="section bg-[var(--sand-2)]">

@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
-import EmptyState from '../components/EmptyState.astro';
+import { waLink } from '../utils/site';
 ---
 <BaseLayout title="Pelatihan" description="Program pelatihan PT. Mardawa Intiguna Persada.">
   <PageHero
@@ -10,10 +10,42 @@ import EmptyState from '../components/EmptyState.astro';
   />
   <section class="section">
     <div class="container-site">
-      <EmptyState
-        title="Belum ada pelatihan"
-        body="Daftar program pelatihan akan ditampilkan di sini."
-      />
+      <div class="max-w-3xl">
+        <p class="max-w-[var(--measure)] text-[var(--text-lg)] leading-relaxed text-[var(--color-ink-2)]">
+          Kami mendukung transfer pengetahuan untuk tim internal, operator sistem, dan unit kerja
+          yang memakai produk atau layanan Mardawa.
+        </p>
+        <ul class="mt-8 grid gap-3 sm:grid-cols-2">
+          {
+            [
+              'Onboarding sistem informasi',
+              'Pelatihan operator web/portal',
+              'Workshop alur data & integrasi',
+              'Pendampingan pasca go-live',
+            ].map((item) => (
+              <li class="rounded-[var(--radius-card)] border border-[var(--color-rule)] bg-[var(--color-paper)] px-4 py-4 text-sm font-medium text-[var(--color-ink)]">
+                {item}
+              </li>
+            ))
+          }
+        </ul>
+        <div class="mt-10 rounded-[var(--radius-card)] border border-[var(--color-rule)] bg-[var(--sand-2)] p-6">
+          <h2 class="text-lg font-semibold tracking-tight text-[var(--color-ink)]">
+            Jadwal pelatihan publik belum diumumkan
+          </h2>
+          <p class="mt-2 text-sm leading-relaxed text-[var(--color-ink-2)]">
+            Untuk pelatihan in-house, hubungi kami dengan kebutuhan tim dan stack yang dipakai.
+          </p>
+          <a
+            href={waLink('Halo Admin Mardawa, saya ingin menanyakan program pelatihan untuk tim.')}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary mt-6"
+          >
+            Tanya pelatihan
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 </BaseLayout>

@@ -2,46 +2,103 @@
   {
     "name": "Sistem Informasi Pendidikan (SIP)",
     "slug": "sistem-informasi-pendidikan-sip",
-    "description": "Portal dan Aplikasi Sistem Informasi Pendidikan (SIP) yang dikembangkan oleh PT. Mardawa."
-  },
-  {
-    "name": "SD Negeri 3 Sitiarjo",
-    "slug": "sd-negeri-3-sitiarjo",
-    "description": "Web Sekolah SD Negeri 3 Sitiarjo yang berlokasi di Kab.Malang, Jawa Timur. https://sdn3sitiarjo.ilmusekolah.web.id/"
-  },
-  {
-    "name": "Web Sekolah SD Negeri 2 Bayah Barat",
-    "slug": "web-sekolah-sd-negeri-2-bayah-barat",
-    "description": "Web Sekolah SD Negeri 2 Bayah Barat yang berlokasi di Kab. Lebak Prov. Banten. https://sdn2bayahbarat.ilmusekolah.web.id/"
-  },
-  {
-    "name": "Web Sekolah Yayasan Bina Pekerti Tangerang Barat",
-    "slug": "web-sekolah-yayasan-bina-pekerti-tangerang-barat",
-    "description": "Web Sekolah Yayasan Bina Pekerti yang berlokasi di Tangerang Barat. https://binapekerti.sekolahweb.my.id/"
-  },
-  {
-    "name": "Web Sekolah SMP Unggulan Baitul Manshurin (UBM)",
-    "slug": "web-sekolah-smp-unggulan-baitul-manshurin-ubm",
-    "description": "Web Sekolah SMP Unggulan Baitul Manshurin yang berlokasi di Bandung. https://smpubm.ilmusekolah.web.id/"
-  },
-  {
-    "name": "Web Sekolah SD Unggulan Baitul Manshurin (UBM)",
-    "slug": "web-sekolah-sd-unggulan-baitul-manshurin-ubm",
-    "description": "Web Sekolah SD Unggulan Baitul Manshurin yang berlokasi di Bandung. https://sdubm.ilmusekolah.web.id/"
-  },
-  {
-    "name": "Web Sekolah  SD Negeri Gunung Gede",
-    "slug": "web-sekolah-sd-negeri-gunung-gede",
-    "description": "Web Sekolah SD Negeri Gunung gede yang berlokasi di Bogor, https://sdngununggede.ilmusekolah.web.id/"
-  },
-  {
-    "name": "Web Sekolah Nurul Ilmi Boarding School (NIBS)",
-    "slug": "web-sekolah-nurul-ilmi-boarding-school-nibs",
-    "description": "Web Sekolah Nurul Ilmi Boarding School yang berlokasi di Bandung. https://nibs.sekolahweb.my.id/"
+    "description": "Portal dan aplikasi Sistem Informasi Pendidikan (SIP) untuk mendukung operasional dan layanan digital di lingkungan pendidikan — dari data sekolah hingga alur layanan yang dipakai harian.",
+    "type": "sistem",
+    "url": null,
+    "highlights": [
+      "Portal dan aplikasi pendidikan",
+      "Dirancang untuk operasional harian instansi/sekolah",
+      "Dikembangkan dan didukung oleh PT. Mardawa"
+    ]
   },
   {
     "name": "Mantap SPMB Online",
     "slug": "mantap-spmb-online",
-    "description": "Mantap PPDB Online, aplikasi web untuk PPDB, telah sukses menyelenggarakan seleksi peserta didik baru selama empat tahun terakhir."
+    "description": "Aplikasi web PPDB/SPMB Online untuk seleksi peserta didik baru. Dipakai menyelenggarakan proses seleksi selama empat tahun terakhir.",
+    "type": "aplikasi",
+    "url": null,
+    "highlights": [
+      "Alur PPDB/SPMB berbasis web",
+      "Dipakai multi-tahun untuk seleksi peserta didik baru",
+      "Fokus proses yang rapi dan mudah dipantau"
+    ]
+  },
+  {
+    "name": "SD Negeri 3 Sitiarjo",
+    "slug": "sd-negeri-3-sitiarjo",
+    "description": "Web sekolah SD Negeri 3 Sitiarjo di Kabupaten Malang, Jawa Timur. Informasi sekolah, berita, dan layanan publik dalam satu portal.",
+    "type": "web-sekolah",
+    "url": "https://sdn3sitiarjo.ilmusekolah.web.id/",
+    "highlights": [
+      "Portal web sekolah siap publik",
+      "Informasi & berita sekolah",
+      "Lokasi: Kab. Malang, Jawa Timur"
+    ]
+  },
+  {
+    "name": "Web Sekolah SD Negeri 2 Bayah Barat",
+    "slug": "web-sekolah-sd-negeri-2-bayah-barat",
+    "description": "Web sekolah SD Negeri 2 Bayah Barat di Kabupaten Lebak, Provinsi Banten.",
+    "type": "web-sekolah",
+    "url": "https://sdn2bayahbarat.ilmusekolah.web.id/",
+    "highlights": [
+      "Portal web sekolah",
+      "Lokasi: Kab. Lebak, Banten"
+    ]
+  },
+  {
+    "name": "Web Sekolah Yayasan Bina Pekerti Tangerang Barat",
+    "slug": "web-sekolah-yayasan-bina-pekerti-tangerang-barat",
+    "description": "Web sekolah Yayasan Bina Pekerti di Tangerang Barat.",
+    "type": "web-sekolah",
+    "url": "https://binapekerti.sekolahweb.my.id/",
+    "highlights": [
+      "Portal web yayasan/sekolah",
+      "Lokasi: Tangerang Barat"
+    ]
+  },
+  {
+    "name": "Web Sekolah SMP Unggulan Baitul Manshurin (UBM)",
+    "slug": "web-sekolah-smp-unggulan-baitul-manshurin-ubm",
+    "description": "Web sekolah SMP Unggulan Baitul Manshurin di Bandung.",
+    "type": "web-sekolah",
+    "url": "https://smpubm.ilmusekolah.web.id/",
+    "highlights": [
+      "Portal web SMP",
+      "Lokasi: Bandung"
+    ]
+  },
+  {
+    "name": "Web Sekolah SD Unggulan Baitul Manshurin (UBM)",
+    "slug": "web-sekolah-sd-unggulan-baitul-manshurin-ubm",
+    "description": "Web sekolah SD Unggulan Baitul Manshurin di Bandung.",
+    "type": "web-sekolah",
+    "url": "https://sdubm.ilmusekolah.web.id/",
+    "highlights": [
+      "Portal web SD",
+      "Lokasi: Bandung"
+    ]
+  },
+  {
+    "name": "Web Sekolah SD Negeri Gunung Gede",
+    "slug": "web-sekolah-sd-negeri-gunung-gede",
+    "description": "Web sekolah SD Negeri Gunung Gede di Bogor.",
+    "type": "web-sekolah",
+    "url": "https://sdngununggede.ilmusekolah.web.id/",
+    "highlights": [
+      "Portal web sekolah",
+      "Lokasi: Bogor"
+    ]
+  },
+  {
+    "name": "Web Sekolah Nurul Ilmi Boarding School (NIBS)",
+    "slug": "web-sekolah-nurul-ilmi-boarding-school-nibs",
+    "description": "Web sekolah Nurul Ilmi Boarding School di Bandung.",
+    "type": "web-sekolah",
+    "url": "https://nibs.sekolahweb.my.id/",
+    "highlights": [
+      "Portal web boarding school",
+      "Lokasi: Bandung"
+    ]
   }
 ]

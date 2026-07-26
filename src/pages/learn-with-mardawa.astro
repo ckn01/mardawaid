@@ -1,7 +1,13 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
-import EmptyState from '../components/EmptyState.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import { getCollection } from 'astro:content';
+import { waLink } from '../utils/site';
+
+const articles = (await getCollection('artikel', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
+);
 ---
 <BaseLayout
   title="Learn With Mardawa"
@@ -12,12 +18,55 @@ import EmptyState from '../components/EmptyState.astro';
     subtitle="Belajar teknologi dan praktik terbaik bersama Mardawa."
   />
   <section class="section">
-    <div class="container-site max-w-3xl">
-      <p class="mb-8 max-w-[var(--measure)] text-[var(--text-lg)] leading-relaxed text-[var(--color-ink-2)]">
-        Learn With Mardawa adalah ruang berbagi materi, tips, dan pembelajaran seputar
-        pengembangan sistem, web, dan teknologi informasi.
-      </p>
-      <EmptyState title="Materi Learn With Mardawa segera hadir." />
+    <div class="container-site">
+      <div class="max-w-3xl">
+        <p class="max-w-[var(--measure)] text-[var(--text-lg)] leading-relaxed text-[var(--color-ink-2)]">
+          Learn With Mardawa adalah ruang berbagi materi, tips, dan pembelajaran seputar
+          pengembangan sistem, web, dan teknologi informasi.
+        </p>
+      </div>
+
+      {
+        articles.length > 0 ? (
+          <div class="mt-10">
+            <div class="mb-6 flex flex-wrap items-end justify-between gap-4">
+              <div>
+                <p class="section-label">Materi</p>
+                <h2 class="section-title">Artikel & bacaan</h2>
+              </div>
+              <a href="/artikel" class="card-link">Semua artikel →</a>
+            </div>
+            <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+              {articles.map((a) => (
+                <ArticleCard
+                  title={a.data.title}
+                  href={`/artikel/${a.id}`}
+                  description={a.data.description}
+                  date={a.data.publishDate.toISOString().slice(0, 10)}
+                  kategori={a.data.kategori}
+                />
+              ))}
+            </div>
+          </div>
+        ) : null
+      }
+
+      <div class="mt-12 rounded-[var(--radius-card)] border border-[var(--color-rule)] bg-[var(--sand-2)] p-6 md:p-8">
+        <h2 class="text-lg font-semibold tracking-tight text-[var(--color-ink)]">
+          Butuh materi untuk tim atau instansi?
+        </h2>
+        <p class="mt-2 max-w-xl text-sm leading-relaxed text-[var(--color-ink-2)]">
+          Kami bisa siapkan sesi transfer pengetahuan sesuai stack dan proses kerja Anda.
+        </p>
+        <a
+          href={waLink('Halo Admin Mardawa, saya ingin tanya materi Learn With Mardawa / pelatihan untuk tim.')}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-primary mt-6"
+        >
+          Hubungi kami
+        </a>
+      </div>
     </div>
   </section>
 </BaseLayout>
