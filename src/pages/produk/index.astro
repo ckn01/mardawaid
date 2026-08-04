@@ -2,23 +2,52 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import ProductCard from '../../components/ProductCard.astro';
+import ServiceCategoryBar from '../../components/ServiceCategoryBar.astro';
 import products from '../../data/products.json';
+
+const countByType = (t: string) => (t === 'all' ? products.length : products.filter((p) => p.type === t).length);
+
+const categories = [
+  { name: 'Semua', description: 'Seluruh produk & sistem', icon: 'all' as const, type: 'all', count: countByType('all') },
+  { name: 'Sistem Informasi Manajemen', description: 'Sistem operasional & manajerial', icon: 'system' as const, type: 'sistem', count: countByType('sistem') },
+  { name: 'Website', description: 'Portal & web sekolah siap publik', icon: 'website' as const, type: 'web-sekolah', count: countByType('web-sekolah') },
+  { name: 'Aplikasi Mobile', description: 'Aplikasi Android interaktif', icon: 'mobile' as const, type: 'aplikasi', count: countByType('aplikasi') },
+  { name: 'Data Warehouse', description: 'Integrasi data lintas unit', icon: 'data' as const, type: 'data', count: countByType('data') },
+];
 ---
-<BaseLayout title="Produk" description="Portfolio produk dan sistem yang dikembangkan PT. Mardawa.">
+<BaseLayout title="Produk" description="Portfolio produk dan sistem informasi yang dikembangkan PT. Mardawa.">
   <PageHero
     title="Produk"
     subtitle="Portfolio produk dan sistem informasi yang kami kembangkan."
   />
   <section class="section">
-    <div class="container-site grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-      {products.map((p) => (
-        <ProductCard
-          name={p.name}
-          description={p.description}
-          href={`/produk/${p.slug}`}
-          type={p.type}
-        />
-      ))}
+    <div class="container-site">
+      <div class="mb-8">
+        <p class="section-label">Kategori</p>
+        <!-- <h2 class="section-title">Apa yang kami kerjakan</h2> -->
+      </div>
+      <ServiceCategoryBar items={categories} />
+
+      <div class="mt-16 mb-8 flex items-end justify-between gap-4">
+        <div>
+          <p class="section-label">Portfolio</p>
+          <h2 class="section-title">Produk & sistem yang kami bangun</h2>
+        </div>
+        <p class="hidden text-sm text-[var(--color-muted)] sm:block" data-product-count>
+          {products.length} produk
+        </p>
+      </div>
+      <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3" data-product-grid>
+        {products.map((p) => (
+          <ProductCard
+            name={p.name}
+            description={p.description}
+            href={`/produk/${p.slug}`}
+            type={p.type}
+            url={p.url ?? null}
+          />
+        ))}
+      </div>
     </div>
   </section>
 </BaseLayout>

@@ -12,7 +12,7 @@
   },
   "showTestimonials": false,
   "nav": [
-    { "label": "Beranda", "href": "/" },
+    { "label": "Beranda", "href": "/v1" },
     { "label": "Tentang Kami", "href": "/tentang-kami" },
     { "label": "Kolaborasi", "href": "/kolaborasi" },
     { "label": "Klien & Mitra", "href": "/klien" },

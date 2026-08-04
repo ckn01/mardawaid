@@ -2,32 +2,85 @@
 interface Props {
   title: string;
   subtitle?: string;
+  variant?: 'image' | 'brand';
 }
 
-const { title, subtitle } = Astro.props;
+const { title, subtitle, variant = 'image' } = Astro.props;
+const isBrand = variant === 'brand';
 ---
 
 <section
-  class="section-tight !pt-40 relative overflow-hidden border-b border-[var(--sand-4)] bg-[var(--sand-2)] bg-center bg-cover bg-no-repeat"
-  style="background-image:url('/images/bg-banner2.png');"
+  class:list={[
+    'section-tight relative overflow-hidden border-b border-[var(--sand-4)] bg-center bg-cover bg-no-repeat',
+    isBrand ? '!pt-40 !pb-24' : '!pt-40 bg-[var(--sand-2)]',
+  ]}
+  style={isBrand ? undefined : "background-image:url('/images/bg-banner2.jpg');"}
 >
-  <div
-    class="pointer-events-none absolute inset-0 opacity-40"
-    style="background: radial-gradient(ellipse 50% 80% at 100% 0%, color-mix(in srgb, var(--brand) 14%, transparent), transparent 60%);"
-    aria-hidden="true"
-  >
-  </div>
+  {
+    isBrand ? (
+      <>
+        {/* Brand gradient background */}
+        <div
+          class="pointer-events-none absolute inset-0"
+          aria-hidden="true"
+          style="background: linear-gradient(135deg, var(--brand) 0%, var(--brand-mid) 55%, var(--brand-dark) 100%);"
+        />
+        {/* Decorative grid pattern */}
+        <div
+          class="pointer-events-none absolute inset-0 opacity-25"
+          aria-hidden="true"
+          style="background-image: linear-gradient(to right, rgb(255 255 255 / 0.18) 1px, transparent 1px), linear-gradient(to bottom, rgb(255 255 255 / 0.18) 1px, transparent 1px); background-size: 40px 40px;"
+        />
+        {/* Soft glow accents */}
+        <div
+          class="pointer-events-none absolute -right-20 -top-20 size-72 rounded-full bg-white/15 blur-3xl"
+          aria-hidden="true"
+        />
+        <div
+          class="pointer-events-none absolute -bottom-24 -left-16 size-72 rounded-full bg-[color-mix(in_srgb,var(--brand-dark)_60%,transparent)] blur-3xl"
+          aria-hidden="true"
+        />
+        {/* Bottom wave divider */}
+        <svg
+          class="pointer-events-none absolute -bottom-px left-0 w-full text-[var(--color-paper)]"
+          viewBox="0 0 1440 80"
+          fill="none"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
+          <path
+            d="M0 80H1440V40C1320 70 1140 80 960 70C720 56 600 24 360 40C240 48 120 64 0 40V80Z"
+            fill="currentColor"
+          />
+        </svg>
+      </>
+    ) : (
+      <div
+        class="pointer-events-none absolute inset-0 opacity-40"
+        style="background: radial-gradient(ellipse 50% 80% at 100% 0%, color-mix(in srgb, var(--brand) 14%, transparent), transparent 60%);"
+        aria-hidden="true"
+      />
+    )
+  }
   <div class="container-site relative">
     <div class="max-w-3xl">
       <h1
-        class="font-[family-name:var(--font-display)] text-[clamp(1.85rem,3vw+0.5rem,2.75rem)] font-semibold leading-[1.1] tracking-[-0.03em] text-[var(--sand-12)]"
+        class:list={[
+          'font-[family-name:var(--font-display)] text-[clamp(1.85rem,3vw+0.5rem,2.75rem)] font-semibold leading-[1.1] tracking-[-0.03em]',
+          isBrand ? 'text-white' : 'text-[var(--sand-12)]',
+        ]}
         style="font-style: normal; overflow-wrap: anywhere; min-width: 0"
       >
         {title}
       </h1>
       {
         subtitle && (
-          <p class="mt-3 max-w-[var(--measure)] text-[var(--text-lg)] leading-relaxed text-[var(--sand-11)]">
+          <p
+            class:list={[
+              'mt-3 max-w-[var(--measure)] text-[var(--text-lg)] leading-relaxed',
+              isBrand ? 'text-white/85' : 'text-[var(--sand-11)]',
+            ]}
+          >
             {subtitle}
           </p>
         )
