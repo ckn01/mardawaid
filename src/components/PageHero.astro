@@ -12,7 +12,7 @@ const isBrand = variant === 'brand';
 <section
   class:list={[
     'section-tight relative overflow-hidden border-b border-[var(--sand-4)] bg-center bg-cover bg-no-repeat',
-    isBrand ? '!pt-40 !pb-24' : '!pt-40 bg-[var(--sand-2)]',
+    isBrand ? 'sm:!pt-40 !pb-24' : '!pt-30 sm:!pt-40 bg-[var(--sand-2)]',
   ]}
   style={isBrand ? undefined : "background-image:url('/images/bg-banner2.jpg');"}
 >
@@ -66,7 +66,7 @@ const isBrand = variant === 'brand';
     <div class="max-w-3xl">
       <h1
         class:list={[
-          'font-[family-name:var(--font-display)] text-[clamp(1.85rem,3vw+0.5rem,2.75rem)] font-semibold leading-[1.1] tracking-[-0.03em]',
+          'font-[family-name:var(--font-display)] text-2xl sm:text-[clamp(1.5rem,3vw+0.5rem,2.75rem)] font-bold sm:font-semibold leading-[1.1] tracking-[-0.03em]',
           isBrand ? 'text-white' : 'text-[var(--sand-12)]',
         ]}
         style="font-style: normal; overflow-wrap: anywhere; min-width: 0"

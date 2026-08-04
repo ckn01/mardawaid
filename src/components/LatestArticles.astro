@@ -8,7 +8,7 @@ const articles = (await getCollection("artikel", ({ data }) => !data.draft))
   .slice(0, 3);
 ---
 
-<section class="section bg-[var(--sand-2)]">
+<section class="section">
   <div class="container-site">
     <SectionHeader
       label="Insight"
@@ -16,7 +16,7 @@ const articles = (await getCollection("artikel", ({ data }) => !data.draft))
       action={{ href: "/artikel", label: "Semua artikel →" }}
       actionClass="card-link !border border-blue-500 px-4 py-2 rounded-xl !bg-transparent"
     />
-    <div class="grid gap-4 md:grid-cols-3">
+    <div class="grid gap-4 grid-cols-2 md:grid-cols-3">
       {
         articles.map((a) => (
           <ArticleCard

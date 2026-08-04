@@ -15,14 +15,14 @@ const { title, href, description, date, kategori } = Astro.props;
     {kategori && <span class="font-mono uppercase tracking-wide text-[var(--color-accent)]">{kategori}</span>}
     {date && <time datetime={date}>{date}</time>}
   </div>
-  <h3 class="text-lg font-semibold tracking-tight text-[var(--color-ink)]">
+  <h3 class="text-md sm:text-lg font-semibold tracking-tight text-[var(--color-ink)]">
     <a href={href} class="hover:text-[var(--color-accent)]">
       {title}
     </a>
   </h3>
   {
     description && (
-      <p class="mt-2 flex-1 text-sm leading-relaxed text-[var(--color-ink-2)]">{description}</p>
+      <p class="mt-2 flex-1 text-xs sm:text-sm leading-relaxed text-[var(--color-ink-2)]">{description}</p>
     )
   }
   <a href={href} class="card-link mt-5">

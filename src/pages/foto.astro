@@ -28,10 +28,10 @@ const thumbs = videos
       {
         thumbs.length > 0 ? (
           <>
-            <p class="mb-8 max-w-[var(--measure)] text-[var(--color-ink-2)]">
+            {/* <p class="mb-8 max-w-[var(--measure)] text-[var(--color-ink-2)]">
               Galeri foto full-res sedang dikumpulkan. Sementara ini, cuplikan dokumentasi dari video resmi perusahaan:
-            </p>
-            <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            </p> */}
+            <ul class="grid gap-4 grid-cols-2 lg:grid-cols-3">
               {thumbs.map((t) => (
                 <li>
                   <a
@@ -60,9 +60,9 @@ const thumbs = videos
                 </li>
               ))}
             </ul>
-            <p class="mt-8">
+            {/* <p class="mt-8">
               <a href="/video" class="card-link">Lihat semua video →</a>
-            </p>
+            </p> */}
           </>
         ) : (
           <p class="text-[var(--color-ink-2)]">Galeri foto akan ditampilkan di sini.</p>
