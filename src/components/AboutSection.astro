@@ -1,0 +1,38 @@
+---
+import SectionHeader from "./SectionHeader.astro";
+---
+
+<section class="section">
+  <div class="container-site">
+    <div class="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-center">
+      <div class="max-w-2xl">
+        <SectionHeader
+          label="Tentang Kami"
+          title="Teknologi yang kami bangun, bukan yang kami janjikan"
+        />
+
+        <p
+          class="mt-4 max-w-lg text-[var(--color-ink-2)] text-[var(--text-lg)] leading-relaxed"
+        >
+          Konsultan IT yang membangun sistem untuk benar-benar dipakai, bukan
+          sekadar demo. Kami merancang layanan digital yang aman, mudah
+          dioperasikan, dan siap digunakan dalam skala organisasi.
+        </p>
+
+        <a href="/tentang-kami" class="btn btn-primary mt-8">
+          Kenali Lebih Jauh Mardawa →
+        </a>
+      </div>
+
+      <div
+        class="overflow-hidden rounded-[var(--radius-card)] border border-[var(--color-rule)] bg-[var(--color-paper)] shadow-[var(--shadow-soft)]"
+      >
+        <img
+          src="/images/tentang-kami.jpg"
+          alt="Tentang kami"
+          class="h-full w-full object-cover"
+        />
+      </div>
+    </div>
+  </div>
+</section>

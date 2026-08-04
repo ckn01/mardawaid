@@ -7,12 +7,16 @@ interface Props {
 const { title, subtitle } = Astro.props;
 ---
 
-<section class="section-tight relative overflow-hidden border-b border-[var(--sand-4)] bg-[var(--sand-2)]">
+<section
+  class="section-tight !pt-40 relative overflow-hidden border-b border-[var(--sand-4)] bg-[var(--sand-2)] bg-center bg-cover bg-no-repeat"
+  style="background-image:url('/images/bg-banner2.png');"
+>
   <div
     class="pointer-events-none absolute inset-0 opacity-40"
     style="background: radial-gradient(ellipse 50% 80% at 100% 0%, color-mix(in srgb, var(--brand) 14%, transparent), transparent 60%);"
     aria-hidden="true"
-  ></div>
+  >
+  </div>
   <div class="container-site relative">
     <div class="max-w-3xl">
       <h1

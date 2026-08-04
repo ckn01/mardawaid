@@ -14,6 +14,7 @@
   "nav": [
     { "label": "Beranda", "href": "/" },
     { "label": "Tentang Kami", "href": "/tentang-kami" },
+    { "label": "Kolaborasi", "href": "/kolaborasi" },
     { "label": "Klien & Mitra", "href": "/klien" },
     {
       "label": "Galeri",

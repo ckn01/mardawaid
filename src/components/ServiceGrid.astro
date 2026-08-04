@@ -12,7 +12,10 @@ interface Props {
 const { items } = Astro.props;
 ---
 
-<section class="section relative overflow-hidden bg-[var(--sand-2)]">
+<section
+  class="section relative overflow-hidden bg-[var(--sand-2)] bg-cover bg-center bg-no-repeat"
+  style="background-image: url('/images/bg-layanan.png');"
+>
   <div class="container-site relative">
     <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
       <div class="max-w-2xl">

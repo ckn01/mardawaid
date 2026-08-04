@@ -1,0 +1,94 @@
+---
+import SectionHeader from "./SectionHeader.astro";
+---
+
+<section
+  class="section bg-center bg-cover bg-no-repeat"
+  style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/images/bg-banner2.png');"
+>
+  <div class="container-site">
+    <SectionHeader
+      label="Portofolio"
+      labelClass="section-label !text-white"
+      title="Karya Kami Sejauh Ini"
+      titleClass="section-title !text-white"
+      action={{ href: "/produk", label: "Semua Proyek Kami →" }}
+      actionClass="card-link !border border-white !text-white px-4 py-2 rounded-xl !bg-transparent"
+      desc="Setiap sistem di sini sedang atau pernah dipakai nyata oleh instansi dan
+      bisnis sungguhan."
+      descClass="text-white"
+    />
+
+    <div
+      class="mt-6 overflow-hidden rounded-[var(--radius-card)] border border-[var(--color-rule)] bg-[var(--color-paper)] bg-cover bg-center shadow-[var(--shadow-soft)]"
+    >
+      <div class="grid gap-4 p-6 lg:grid-cols-[minmax(0,1.7fr)_1fr]">
+        <div
+          class="overflow-hidden rounded-[var(--radius-card)] bg-white/95 shadow-[var(--shadow-soft)]"
+        >
+          <img
+            src="/images/project.jpg"
+            alt="Tampilan proyek laptop"
+            class="h-full w-full object-cover sm:aspect-[4/3]"
+          />
+        </div>
+
+        <div class="grid gap-4">
+          <article
+            class="rounded-[var(--radius-card)] border border-[var(--color-rule)] bg-[var(--color-paper)] p-6 shadow-[var(--shadow-soft)]"
+          >
+            <h3
+              class="text-lg font-semibold tracking-tight text-[var(--color-ink)]"
+            >
+              Sistem Informasi Pendidikan
+            </h3>
+          </article>
+
+          <div class="grid gap-4 sm:grid-cols-2">
+            <article
+              class="rounded-[var(--radius-card)] border border-[var(--color-rule)] bg-[var(--color-paper)] p-6 shadow-[var(--shadow-soft)]"
+            >
+              <h3
+                class="text-base font-semibold tracking-tight text-[var(--color-ink)]"
+              >
+                Sistem Informasi Lingkungan
+              </h3>
+            </article>
+
+            <article
+              class="rounded-[var(--radius-card)] border border-[var(--color-rule)] bg-[var(--color-paper)] p-6 shadow-[var(--shadow-soft)]"
+            >
+              <h3
+                class="text-base font-semibold tracking-tight text-[var(--color-ink)]"
+              >
+                SOLUSI UMKM
+              </h3>
+            </article>
+          </div>
+
+          <div class="grid gap-4 sm:grid-cols-2">
+            <article
+              class="rounded-[var(--radius-card)] border border-[var(--color-rule)] bg-[var(--color-paper)] p-6 shadow-[var(--shadow-soft)]"
+            >
+              <h3
+                class="text-base font-semibold tracking-tight text-[var(--color-ink)]"
+              >
+                Website Sekolah
+              </h3>
+            </article>
+
+            <article
+              class="rounded-[var(--radius-card)] border border-[var(--color-rule)] bg-[var(--color-paper)] p-6 shadow-[var(--shadow-soft)]"
+            >
+              <h3
+                class="text-base font-semibold tracking-tight text-[var(--color-ink)]"
+              >
+                Document Tracker Information System
+              </h3>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,59 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import { getSite } from "../utils/site";
+import clients from "../data/clients.json";
+
+const site = getSite();
+
+const collaboratorCards = clients.map((client) => ({
+  name: client.name,
+  logo: client.logo,
+}));
+---
+
+<BaseLayout title="Kolaborasi" description={site.description}>
+  <PageHero
+    title="Kolaborasi"
+    subtitle="Bersama mitra strategis yang memperkuat layanan digital kami."
+  />
+
+  <section class="section">
+    <div class="container-site">
+      <div class="max-w-2xl">
+        <p class="section-label">Siapa kami</p>
+        <h2 class="section-title">
+          PT. Mardawa Intiguna Persada adalah perusahaan konsultan IT yang
+          memberikan pelayanan jasa konsultasi desain dan teknologi informasi.
+        </h2>
+        <p
+          class="mt-5 max-w-[var(--measure)] text-[var(--text-lg)] leading-relaxed text-[var(--color-ink-2)]"
+        >
+          Kami berkomitmen untuk memberikan solusi inovatif untuk memenuhi
+          kebutuhan era teknologi yang terus berkembang.
+        </p>
+      </div>
+
+      <div
+        class="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+      >
+        {
+          collaboratorCards.map((item) => (
+            <article class="rounded-[var(--radius-card)] border border-[var(--color-rule)] bg-[var(--color-paper)] p-5 shadow-[var(--shadow-soft)]">
+              <div class="mb-4 flex h-20 items-center justify-center rounded-[var(--radius-card)] bg-[var(--sand-2)]">
+                <img
+                  src={item.logo}
+                  alt={item.name}
+                  class="max-h-12 object-contain"
+                />
+              </div>
+              <p class="text-sm font-medium text-[var(--color-ink)]">
+                {item.name}
+              </p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>

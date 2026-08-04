@@ -1,0 +1,26 @@
+---
+import VideoCard from "./VideoCard.astro";
+import SectionHeader from "./SectionHeader.astro";
+import videos from "../data/videos.json";
+---
+
+<section class="section">
+  <div class="container-site">
+    <SectionHeader
+      label="Dokumentasi"
+      title="Cerita Dibalik Layar Mardawa"
+      action={{ href: "/video", label: "Semua video →" }}
+    />
+    <div class="grid gap-4 md:grid-cols-3">
+      {
+        videos.map((v) => (
+          <VideoCard
+            title={v.title}
+            youtubeUrl={v.youtubeUrl}
+            description={v.description}
+          />
+        ))
+      }
+    </div>
+  </div>
+</section>

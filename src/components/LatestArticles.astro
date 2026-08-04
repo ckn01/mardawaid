@@ -1,0 +1,33 @@
+---
+import ArticleCard from "./ArticleCard.astro";
+import SectionHeader from "./SectionHeader.astro";
+import { getCollection } from "astro:content";
+
+const articles = (await getCollection("artikel", ({ data }) => !data.draft))
+  .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
+  .slice(0, 3);
+---
+
+<section class="section bg-[var(--sand-2)]">
+  <div class="container-site">
+    <SectionHeader
+      label="Insight"
+      title="Belajar Digital Bareng Mardawa"
+      action={{ href: "/artikel", label: "Semua artikel →" }}
+      actionClass="card-link !border border-blue-500 px-4 py-2 rounded-xl !bg-transparent"
+    />
+    <div class="grid gap-4 md:grid-cols-3">
+      {
+        articles.map((a) => (
+          <ArticleCard
+            title={a.data.title}
+            href={`/artikel/${a.id}`}
+            description={a.data.description}
+            date={a.data.publishDate.toISOString().slice(0, 10)}
+            kategori={a.data.kategori}
+          />
+        ))
+      }
+    </div>
+  </div>
+</section>

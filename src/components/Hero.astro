@@ -10,48 +10,55 @@ interface Props {
 }
 
 const {
-  title = 'PT. Mardawa Intiguna Persada',
-  headline = 'Merancang, membangun, dan mengantarkan sistem siap pakai.',
+  title = "PT. Mardawa Intiguna Persada",
+  headline = "Merancang, membangun, dan mengantarkan sistem siap pakai.",
   subtitle,
   ctaHref,
-  ctaLabel = 'Hubungi Kami',
-  secondaryHref = '/layanan',
-  secondaryLabel = 'Lihat Layanan',
+  ctaLabel = "Hubungi Kami",
+  secondaryHref = "/layanan",
+  secondaryLabel = "Lihat Layanan",
 } = Astro.props;
 ---
 
-<section class="hero-solution relative overflow-hidden border-b border-[var(--color-rule)]">
+<section
+  class="hero-solution relative overflow-hidden border-b border-[var(--color-rule)]"
+  style="background-image: url('/images/bg-banner2.png'); background-size: cover; background-position: top;"
+>
   <div class="hero-solution__glow" aria-hidden="true"></div>
   <div class="hero-solution__grid" aria-hidden="true"></div>
 
-  <div class="container-site relative py-[var(--space-2xl)] lg:py-[var(--space-3xl)]">
-    <div class="max-w-3xl">
-      <div class="inline-flex items-center gap-2 rounded-[var(--radius-pill)] border border-[color-mix(in_srgb,var(--brand)_25%,var(--sand-4))] bg-[var(--brand-soft)] px-3 py-1">
+  <div
+    class="container-site relative py-[var(--space-2xl)] lg:py-[var(--space-3xl)]"
+  >
+    <div class="max-w-4xl">
+      <!-- <div class="inline-flex items-center gap-2 rounded-[var(--radius-pill)] border border-[color-mix(in_srgb,var(--brand)_25%,var(--sand-4))] bg-[var(--brand-soft)] px-3 py-1">
         <span class="size-1.5 rounded-full bg-[var(--brand)]" aria-hidden="true"></span>
         <span class="font-mono text-[0.7rem] font-medium uppercase tracking-[0.08em] text-[var(--brand-dark)]">
           Konsultan IT · Jakarta
         </span>
-      </div>
+      </div> -->
 
-      <p class="mt-5 text-sm font-medium text-[var(--sand-11)]">{title}</p>
+      <!-- <p class="mt-5 text-sm font-medium text-[var(--sand-11)]">{title}</p> -->
 
       <h1
-        class="mt-2 max-w-[18ch] font-[family-name:var(--font-display)] text-[length:var(--text-display)] font-semibold leading-[1.05] tracking-[-0.035em] text-[var(--sand-12)]"
+        class="mt-2 pt-10 font-[family-name:var(--font-display)] text-[length:var(--text-display)] font-bold leading-[1.05] tracking-[-0.035em] text-[var(--sand-12)]"
         style="font-style: normal; overflow-wrap: anywhere; min-width: 0"
       >
         {headline}
       </h1>
 
-      <p class="mt-5 max-w-xl text-[var(--text-lg)] leading-relaxed text-[var(--sand-11)]">
+      <p
+        class="mt-5 text-[var(--text-lg)] leading-relaxed text-[var(--sand-11)]"
+      >
         {subtitle}
       </p>
 
       <div class="mt-8 flex flex-wrap gap-3">
         <a
           href={ctaHref}
-          target={ctaHref.startsWith('http') ? '_blank' : undefined}
-          rel={ctaHref.startsWith('http') ? 'noopener noreferrer' : undefined}
-          class="btn btn-primary"
+          target={ctaHref.startsWith("http") ? "_blank" : undefined}
+          rel={ctaHref.startsWith("http") ? "noopener noreferrer" : undefined}
+          class="btn bg-orange-400 text-white"
         >
           {ctaLabel}
         </a>
@@ -59,22 +66,41 @@ const {
           {secondaryLabel}
         </a>
       </div>
-    </div>
 
-    <dl class="mt-12 grid grid-cols-2 gap-4 border-t border-[var(--sand-4)] pt-8 sm:grid-cols-3 sm:gap-8 lg:max-w-100%">
-      <div>
-        <dt class="font-mono text-[0.65rem] uppercase tracking-[0.08em] text-[var(--sand-9)]">Domain</dt>
-        <dd class="mt-1 text-sm font-semibold tracking-tight text-[var(--sand-12)]">Instansi · Pendidikan · Bisnis</dd>
+      <div class="mt-12 flex flex-wrap items-center gap-6">
+        <span
+          class="font-medium uppercase tracking-[0.16em] text-[var(--brand)]"
+          >Mitra Kami</span
+        >
+        <div class="flex flex-wrap items-center gap-4">
+          <img
+            src="/images/g-cilegon.png"
+            alt="G Cilegon"
+            class="h-15 w-auto object-contain"
+          />
+          <img
+            src="/images/g-kotabogor.png"
+            alt="G Kotabogor"
+            class="h-15 w-auto object-contain"
+          />
+          <img
+            src="/images/g-asnet.png"
+            alt="G Asnet"
+            class="h-15 w-auto object-contain"
+          />
+          <img
+            src="/images/g-cloudkilat.png"
+            alt="G Cloudkilat"
+            class="h-15 w-auto object-contain"
+          />
+          <img
+            src="/images/g-kemendikdasmen.png"
+            alt="G Kemendikdasmen"
+            class="h-15 w-auto object-contain"
+          />
+        </div>
       </div>
-      <div>
-        <dt class="font-mono text-[0.65rem] uppercase tracking-[0.08em] text-[var(--sand-9)]">Delivery</dt>
-        <dd class="mt-1 text-sm font-semibold tracking-tight text-[var(--sand-12)]">Desain · Build · Support</dd>
-      </div>
-      <div class="col-span-2 sm:col-span-1">
-        <dt class="font-mono text-[0.65rem] uppercase tracking-[0.08em] text-[var(--sand-9)]">Fokus</dt>
-        <dd class="mt-1 text-sm font-semibold tracking-tight text-[var(--sand-12)]">Sistem siap operasional</dd>
-      </div>
-    </dl>
+    </div>
   </div>
 </section>
 
@@ -88,8 +114,16 @@ const {
     inset: -20% 20% auto -10%;
     height: 70%;
     background:
-      radial-gradient(ellipse 60% 50% at 20% 30%, color-mix(in srgb, var(--brand) 16%, transparent), transparent 70%),
-      radial-gradient(ellipse 40% 40% at 80% 10%, color-mix(in srgb, var(--brand-theme) 12%, transparent), transparent 65%);
+      radial-gradient(
+        ellipse 60% 50% at 20% 30%,
+        color-mix(in srgb, var(--brand) 16%, transparent),
+        transparent 70%
+      ),
+      radial-gradient(
+        ellipse 40% 40% at 80% 10%,
+        color-mix(in srgb, var(--brand-theme) 12%, transparent),
+        transparent 65%
+      );
   }
   .hero-solution__grid {
     pointer-events: none;
@@ -97,8 +131,16 @@ const {
     inset: 0;
     opacity: 0.45;
     background-image:
-      linear-gradient(to right, color-mix(in srgb, var(--sand-5) 70%, transparent) 1px, transparent 1px),
-      linear-gradient(to bottom, color-mix(in srgb, var(--sand-5) 70%, transparent) 1px, transparent 1px);
+      linear-gradient(
+        to right,
+        color-mix(in srgb, var(--sand-5) 70%, transparent) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        to bottom,
+        color-mix(in srgb, var(--sand-5) 70%, transparent) 1px,
+        transparent 1px
+      );
     background-size: 48px 48px;
     mask-image: linear-gradient(to bottom, black 0%, transparent 92%);
   }

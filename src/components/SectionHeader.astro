@@ -1,0 +1,47 @@
+---
+interface Action {
+  href: string;
+  label: string;
+}
+
+interface Props {
+  label: string;
+  title: string;
+  action?: Action;
+  labelClass?: string;
+  titleClass?: string;
+  actionClass?: string;
+  desc?: string;
+  descClass?: string;
+}
+
+const {
+  label,
+  labelClass = "section-label !text-orange-400",
+  title,
+  titleClass = "section-title",
+  desc,
+  descClass,
+  action,
+  actionClass = "card-link",
+} = Astro.props;
+---
+
+<div class="mb-8 flex flex-wrap items-end justify-between gap-4">
+  <div>
+    <p class={labelClass}>{label}</p>
+    <h2 class={titleClass}>{title}</h2>
+    {
+      desc ? (
+        <p class={descClass || "max-w-2xl text-[var(--color-ink-2)]"}>{desc}</p>
+      ) : null
+    }
+  </div>
+  {
+    action ? (
+      <a href={action.href} class={actionClass}>
+        {action.label}
+      </a>
+    ) : null
+  }
+</div>

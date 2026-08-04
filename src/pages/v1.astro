@@ -1,0 +1,98 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import SectionAbout from "../components/SectionAbout.astro";
+import ServiceGrid from "../components/ServiceGrid.astro";
+import PortfolioStrip from "../components/PortfolioStrip.astro";
+import ClientGrid from "../components/ClientGrid.astro";
+import LatestArticles from "../components/LatestArticles.astro";
+import PortfolioSection from "../components/PortfolioSection.astro";
+import ProjectGridSection from "../components/ProjectGridSection.astro";
+import AboutSection from "../components/AboutSection.astro";
+import VideoSection from "../components/VideoSection.astro";
+import CtaBand from "../components/CtaBand.astro";
+import { getSite, waLink } from "../utils/site";
+import services from "../data/services.json";
+import servicesPortfolio from "../data/services-portfolio.json";
+import products from "../data/products.json";
+import clients from "../data/clients.json";
+import testimonials from "../data/testimonials.json";
+
+const site = getSite();
+const showTestimonials = site.showTestimonials && testimonials.length > 0;
+
+const portfolioProducts = products.slice(0, 3).map((p) => ({
+  name: p.name,
+  description: p.description,
+  href: `/produk/${p.slug}`,
+  kind:
+    p.type === "web-sekolah"
+      ? "Web sekolah"
+      : p.type === "aplikasi"
+        ? "Aplikasi"
+        : "Sistem",
+}));
+const portfolioServices = servicesPortfolio.map((s) => ({
+  name: s.name,
+  description: s.description,
+  href: `/layanan/${s.slug}`,
+  kind: "Layanan",
+}));
+---
+
+<BaseLayout description={site.description}>
+  <Hero
+    title={site.name}
+    headline="Mitra Konsultasi & Pengembangan Solusi Digital"
+    subtitle={"Website, sistem informasi, aplikasi mobile, sampai integrasi data, kami bangun sampai benar-benar dipakai, bukan cuma sampai serah terima."}
+    ctaHref={waLink()}
+    ctaLabel="Konsultasi Gratis Sekarang"
+    secondaryHref="/layanan"
+    secondaryLabel="Jelajahi Layanan"
+  />
+  <!-- <SectionAbout description={site.description} /> -->
+  <!-- <ServiceGrid items={services} /> -->
+  <!-- <PortfolioStrip products={portfolioProducts} services={portfolioServices} /> -->
+  <!-- <ClientGrid items={clients} /> -->
+
+  <AboutSection />
+
+  <ProjectGridSection />
+
+  <PortfolioSection />
+
+  <LatestArticles />
+
+  {
+    showTestimonials && (
+      <section class="section">
+        <div class="container-site">
+          <p class="section-label">Testimoni</p>
+          <h2 class="section-title mb-8">Apa kata klien</h2>
+          <div class="grid gap-4 md:grid-cols-3">
+            {testimonials.map((t) => (
+              <blockquote class="card">
+                <p class="leading-relaxed text-[var(--color-ink-2)]">
+                  “{t.quote}”
+                </p>
+                <footer class="mt-4 text-sm font-medium text-[var(--color-ink)]">
+                  {t.name}
+                  {t.role ? (
+                    <span class="font-normal text-[var(--color-muted)]">
+                      {" "}
+                      — {t.role}
+                    </span>
+                  ) : null}
+                </footer>
+              </blockquote>
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  <!-- <VideoSection /> -->
+
+  <CtaBand />
+</BaseLayout>

@@ -1,14 +1,15 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import PageHero from '../components/PageHero.astro';
-import TeamGrid from '../components/TeamGrid.astro';
-import MapEmbed from '../components/MapEmbed.astro';
-import { getSite } from '../utils/site';
-import team from '../data/team.json';
-import maps from '../data/maps.json';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import TeamGrid from "../components/TeamGrid.astro";
+import MapEmbed from "../components/MapEmbed.astro";
+import { getSite } from "../utils/site";
+import team from "../data/team.json";
+import maps from "../data/maps.json";
 
 const site = getSite();
 ---
+
 <BaseLayout title="Tentang Kami" description={site.description}>
   <PageHero title="Tentang Kami" subtitle={site.tagline} />
 
@@ -16,22 +17,99 @@ const site = getSite();
     <div class="container-site">
       <p class="section-label">Profil</p>
       <h2 class="section-title">Siapa kami</h2>
-      <p class="mt-5 max-w-[var(--measure)] text-[var(--text-lg)] leading-relaxed text-[var(--color-ink-2)]">
+      <p
+        class="mt-5 max-w-[var(--measure)] text-[var(--text-lg)] leading-relaxed text-[var(--color-ink-2)]"
+      >
         {site.description}
       </p>
     </div>
   </section>
 
-  <TeamGrid items={team} />
+  <section class="section">
+    <div class="container-site">
+      <div class="rounded-2xl bg-orange-500 px-8 py-6 text-white shadow-lg">
+        <p class="text-[11px] uppercase tracking-[0.2em] text-orange-100">
+          VISI
+        </p>
+
+        <h2 class="mt-2 text-2xl font-semibold">Visi kami</h2>
+
+        <p class="mt-4 max-w-5xl text-sm leading-7 text-orange-100">
+          PT. Mardawa Intiguna Persada adalah perusahaan konsultan IT yang
+          memberikan pelayanan jasa konsultasi desain dan teknologi informasi.
+          Kami berkomitmen untuk memberikan solusi inovatif untuk memenuhi
+          kebutuhan era teknologi yang terus berkembang.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-site">
+      <p class="section-label">Misi</p>
+      <h2 class="section-title">Misi kami</h2>
+      <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <article
+          class="rounded-[var(--radius-card)] border border-[var(--color-rule)] bg-[var(--color-paper)] p-5 shadow-[var(--shadow-soft)]"
+        >
+          <h3 class="font-semibold text-[var(--color-ink)]">Misi 1</h3>
+          <p class="mt-2 text-sm text-[var(--color-ink-2)]">
+            Membangun sistem yang dapat digunakan dan dikelola dengan mudah.
+          </p>
+        </article>
+        <article
+          class="rounded-[var(--radius-card)] border border-[var(--color-rule)] bg-[var(--color-paper)] p-5 shadow-[var(--shadow-soft)]"
+        >
+          <h3 class="font-semibold text-[var(--color-ink)]">Misi 2</h3>
+          <p class="mt-2 text-sm text-[var(--color-ink-2)]">
+            Memberikan dukungan penuh selama implementasi dan pasca peluncuran.
+          </p>
+        </article>
+        <article
+          class="rounded-[var(--radius-card)] border border-[var(--color-rule)] bg-[var(--color-paper)] p-5 shadow-[var(--shadow-soft)]"
+        >
+          <h3 class="font-semibold text-[var(--color-ink)]">Misi 3</h3>
+          <p class="mt-2 text-sm text-[var(--color-ink-2)]">
+            Menghadirkan solusi digital yang sesuai kebutuhan instansi dan
+            bisnis.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-[var(--brand)] text-white">
+    <div class="container-site py-12 text-center">
+      <p
+        class="text-xs uppercase tracking-[0.22em] text-[var(--color-paper-2)]"
+      >
+        Tagline
+      </p>
+      <h2
+        class="mt-4 text-3xl font-semibold tracking-tight text-[var(--color-paper)] sm:text-4xl"
+      >
+        PT. Mardawa Intiguna Persada adalah perusahaan konsultan IT yang
+        memberikan pelayanan jasa konsultasi desain dan teknologi informasi.
+      </h2>
+      <p
+        class="mt-5 max-w-3xl mx-auto text-base leading-relaxed text-[var(--color-paper-2)]"
+      >
+        Kami berkomitmen untuk memberikan solusi inovatif untuk memenuhi
+        kebutuhan era teknologi yang terus berkembang.
+      </p>
+    </div>
+  </section>
 
   <section class="section bg-[var(--color-paper-2)]">
     <div class="container-site">
       <p class="section-label">Lokasi</p>
       <h2 class="section-title">Kantor & workshop</h2>
       <div class="mt-10 grid gap-4 md:grid-cols-2">
-        {maps.map((m) => (
-          <MapEmbed title={m.title} alamat={m.alamat} src={m.src} />
-        ))}
+        {
+          maps.map((m) => (
+            <MapEmbed title={m.title} alamat={m.alamat} src={m.src} />
+          ))
+        }
       </div>
     </div>
   </section>

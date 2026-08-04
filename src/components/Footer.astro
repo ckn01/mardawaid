@@ -1,36 +1,77 @@
 ---
-import { getSite, mailtoLink, waLink } from '../utils/site';
+import { getSite, mailtoLink, waLink } from "../utils/site";
 
 const site = getSite();
 const year = new Date().getFullYear();
 
 const quickLinks = [
-  { label: 'Tentang', href: '/tentang-kami' },
-  { label: 'Klien', href: '/klien' },
-  { label: 'Produk', href: '/produk' },
-  { label: 'Layanan', href: '/layanan' },
-  { label: 'Artikel', href: '/artikel' },
+  { label: "Tentang", href: "/tentang-kami" },
+  { label: "Klien", href: "/klien" },
+  { label: "Produk", href: "/produk" },
+  { label: "Layanan", href: "/layanan" },
+  { label: "Artikel", href: "/artikel" },
 ];
 ---
 
-<footer class="mt-auto border-t border-[var(--sand-4)] bg-[var(--sand-2)]">
-  <div class="container-site py-[var(--space-2xl)]">
-    <p class="max-w-2xl font-[family-name:var(--font-display)] text-[clamp(1.35rem,2vw+0.5rem,1.85rem)] font-semibold leading-snug tracking-tight text-[var(--sand-12)]">
-      Solusi IT yang jelas, terukur, dan siap dipakai instansi maupun bisnis.
-    </p>
-    <p class="mt-3 max-w-xl text-sm leading-relaxed text-[var(--sand-11)]">
-      {site.tagline}
-    </p>
+<footer class="">
+  <div class="mx-auto bg-[#033663] px-6 py-12 text-white sm:px-10 lg:px-12">
+    <!-- Top Section: Headline + CTA Button -->
+    <div
+      class="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between"
+    >
+      <div class="max-w-2xl">
+        <h2
+          class="text-2xl font-semibold tracking-tight text-white sm:text-3xl lg:text-4xl"
+        >
+          Satu Mitra, Semua Kebutuhan Digital
+        </h2>
+        <p class="mt-3 text-sm leading-relaxed text-blue-100/80 sm:text-base">
+          Website, sistem informasi, aplikasi mobile, hingga integrasi data —
+          kami kerjakan dengan standar yang sama, untuk instansi maupun bisnis.
+        </p>
+      </div>
 
-    <div class="mt-10 flex flex-col gap-8 border-t border-[var(--sand-4)] pt-8 md:flex-row md:items-start md:justify-between">
+      <!-- Button Konsultasi -->
+      <div class="shrink-0">
+        <a
+          href={waLink()}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 rounded-xl bg-amber-400 px-5 py-3 text-sm font-semibold text-gray-900 transition hover:bg-amber-300"
+        >
+          Mulai Konsultasi
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-4 w-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Divider Line -->
+    <hr class="my-10 border-blue-800/60" />
+
+    <!-- Navigation & Social Links -->
+    <div
+      class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between text-sm"
+    >
       <nav aria-label="Tautan footer">
-        <ul class="flex flex-wrap gap-x-5 gap-y-2">
+        <ul class="flex flex-wrap gap-x-6 gap-y-2 font-medium">
           {
             quickLinks.map((link) => (
               <li>
                 <a
                   href={link.href}
-                  class="text-sm font-medium text-[var(--sand-11)] hover:text-[var(--brand)]"
+                  class="text-blue-100/90 transition hover:text-white"
                 >
                   {link.label}
                 </a>
@@ -40,30 +81,52 @@ const quickLinks = [
         </ul>
       </nav>
 
-      <ul class="flex flex-wrap gap-x-5 gap-y-2 text-sm">
+      <ul class="flex flex-wrap gap-x-6 gap-y-2 font-medium">
         <li>
-          <a href={mailtoLink()} class="text-[var(--sand-11)] hover:text-[var(--brand)]">{site.email}</a>
+          <a
+            href={mailtoLink()}
+            class="text-blue-100/90 transition hover:text-white"
+          >
+            {site.email}
+          </a>
         </li>
         <li>
-          <a href={waLink()} target="_blank" rel="noopener noreferrer" class="text-[var(--sand-11)] hover:text-[var(--brand)]">
+          <a
+            href={waLink()}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-blue-100/90 transition hover:text-white"
+          >
             WhatsApp
           </a>
         </li>
         <li>
-          <a href={site.social.instagram} target="_blank" rel="noopener noreferrer" class="text-[var(--sand-11)] hover:text-[var(--brand)]">
+          <a
+            href={site.social.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-blue-100/90 transition hover:text-white"
+          >
             Instagram
           </a>
         </li>
         <li>
-          <a href={site.social.youtube} target="_blank" rel="noopener noreferrer" class="text-[var(--sand-11)] hover:text-[var(--brand)]">
+          <a
+            href={site.social.youtube}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-blue-100/90 transition hover:text-white"
+          >
             YouTube
           </a>
         </li>
       </ul>
     </div>
 
-    <p class="mt-10 text-xs text-[var(--sand-9)]">
-      © {year} {site.name}
-    </p>
+    <!-- Bottom Copyright -->
+    <div class="mt-12 text-center text-xs text-blue-200/60">
+      © {year}
+      {site.name}
+    </div>
   </div>
 </footer>

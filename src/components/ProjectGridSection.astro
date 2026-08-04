@@ -1,0 +1,107 @@
+---
+import SectionHeader from "./SectionHeader.astro";
+---
+
+<section class="section">
+  <div class="container-site">
+    <div
+      class="grid gap-8 lg:grid-cols-[minmax(0,18rem)_minmax(0,1fr)] lg:items-start"
+    >
+      <div>
+        <SectionHeader
+          label="Layanan"
+          title="Solusi digital yang sesuai kebutuhan Anda, bukan template serba sama"
+          action={{ href: "/layanan", label: "Lihat Semua Layanan →" }}
+        />
+        <p class="mt-3 text-[var(--color-ink-2)]">
+          Dari portal publik hingga integrasi data lintas divisi — semua kami
+          rancang untuk dipakai harian, bukan sekadar pajangan di company
+          profile.
+        </p>
+      </div>
+
+      <!-- 
+        PENYESUAIAN PENTING DI SINI:
+        1. Menambahkan `items-center` pada grid utama kartu agar semua kartu sejajar di tengah secara vertikal.
+      -->
+      <div
+        class="grid gap-4 sm:grid-cols-2 md:grid-cols-4 items-center justify-center"
+      >
+        <!-- 
+          PERUBAHAN STRUKTUR KARTU (Sangat Penting):
+          Kami merubah kartu menjadi flexbox vertikal (`flex flex-col`), 
+          lalu menempatkan judul di atas gambar, dan menggunakan `justify-center` 
+          untuk memusatkan konten di dalam kartu secara vertikal.
+        -->
+        <article
+          class="card overflow-hidden p-0 shadow-none border-[var(--color-rule)] flex flex-col justify-center items-center text-center rounded-xl bg-white h-auto"
+        >
+          <!-- Perubahan gambar: Menghapus w-64, menggunakan w-full, h-auto, dan menghapus max-h -->
+          <img
+            src="/images/project.jpg"
+            alt="Website Development"
+            class="w-full h-auto object-contain"
+          />
+          <div class="p-5">
+            <h3
+              class="text-lg font-semibold tracking-tight text-[var(--color-ink)]"
+            >
+              Website Development
+            </h3>
+          </div>
+        </article>
+
+        <article
+          class="card overflow-hidden p-0 shadow-none border-[var(--color-rule)] flex flex-col justify-center items-center text-center rounded-xl bg-white h-auto"
+        >
+          <img
+            src="/images/sip.jpg"
+            alt="Manajemen Sistem Informasi"
+            class="w-full h-auto object-contain"
+          />
+          <div class="p-5">
+            <h3
+              class="text-lg font-semibold tracking-tight text-[var(--color-ink)]"
+            >
+              Manajemen Sistem Informasi
+            </h3>
+          </div>
+        </article>
+
+        <article
+          class="card overflow-hidden p-0 shadow-none border-[var(--color-rule)] flex flex-col justify-center items-center text-center rounded-xl bg-white h-auto"
+        >
+          <img
+            src="/images/project-mobile.jpg"
+            alt="Mobile Apps development"
+            class="w-full h-auto object-contain"
+          />
+          <div class="p-5">
+            <h3
+              class="text-lg font-semibold tracking-tight text-[var(--color-ink)]"
+            >
+              Mobile Apps development
+            </h3>
+          </div>
+        </article>
+
+        <article
+          class="card overflow-hidden p-0 shadow-none border-[var(--color-rule)] flex flex-col justify-center items-center text-center rounded-xl bg-white h-auto"
+        >
+          <img
+            src="/images/data-warehouse.jpg"
+            alt="Data Warehouse"
+            class="w-full h-auto object-contain"
+          />
+          <div class="p-5">
+            <h3
+              class="text-lg font-semibold tracking-tight text-[var(--color-ink)]"
+            >
+              Data Warehouse
+            </h3>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>

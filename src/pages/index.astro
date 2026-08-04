@@ -5,22 +5,17 @@ import SectionAbout from '../components/SectionAbout.astro';
 import ServiceGrid from '../components/ServiceGrid.astro';
 import PortfolioStrip from '../components/PortfolioStrip.astro';
 import ClientGrid from '../components/ClientGrid.astro';
-import ArticleCard from '../components/ArticleCard.astro';
-import VideoCard from '../components/VideoCard.astro';
+import LatestArticles from '../components/LatestArticles.astro';
+import VideoSection from '../components/VideoSection.astro';
 import CtaBand from '../components/CtaBand.astro';
 import { getSite, waLink } from '../utils/site';
-import { getCollection } from 'astro:content';
 import services from '../data/services.json';
 import servicesPortfolio from '../data/services-portfolio.json';
 import products from '../data/products.json';
 import clients from '../data/clients.json';
-import videos from '../data/videos.json';
 import testimonials from '../data/testimonials.json';
 
 const site = getSite();
-const articles = (await getCollection('artikel', ({ data }) => !data.draft))
-  .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
-  .slice(0, 3);
 const showTestimonials = site.showTestimonials && testimonials.length > 0;
 
 const portfolioProducts = products.slice(0, 3).map((p) => ({
@@ -51,30 +46,7 @@ const portfolioServices = servicesPortfolio.map((s) => ({
   <PortfolioStrip products={portfolioProducts} services={portfolioServices} />
   <ClientGrid items={clients} />
 
-  <section class="section bg-[var(--sand-2)]">
-    <div class="container-site">
-      <div class="mb-8 flex flex-wrap items-end justify-between gap-4">
-        <div>
-          <p class="section-label">Insight</p>
-          <h2 class="section-title">Artikel terbaru</h2>
-        </div>
-        <a href="/artikel" class="card-link">Semua artikel →</a>
-      </div>
-      <div class="grid gap-4 md:grid-cols-3">
-        {
-          articles.map((a) => (
-            <ArticleCard
-              title={a.data.title}
-              href={`/artikel/${a.id}`}
-              description={a.data.description}
-              date={a.data.publishDate.toISOString().slice(0, 10)}
-              kategori={a.data.kategori}
-            />
-          ))
-        }
-      </div>
-    </div>
-  </section>
+  <LatestArticles />
 
   {
     showTestimonials && (
@@ -98,24 +70,7 @@ const portfolioServices = servicesPortfolio.map((s) => ({
     )
   }
 
-  <section class="section">
-    <div class="container-site">
-      <div class="mb-8 flex flex-wrap items-end justify-between gap-4">
-        <div>
-          <p class="section-label">Dokumentasi</p>
-          <h2 class="section-title">Video</h2>
-        </div>
-        <a href="/video" class="card-link">Semua video →</a>
-      </div>
-      <div class="grid gap-4 md:grid-cols-3">
-        {
-          videos.map((v) => (
-            <VideoCard title={v.title} youtubeUrl={v.youtubeUrl} description={v.description} />
-          ))
-        }
-      </div>
-    </div>
-  </section>
+  <VideoSection />
 
   <CtaBand />
 </BaseLayout>
