@@ -5,16 +5,18 @@ interface Props {
   description?: string;
   type?: string;
   url?: string | null;
+  label?: string;
 }
 
 const typeLabel: Record<string, string> = {
   sistem: 'Sistem',
   aplikasi: 'Aplikasi',
-  'web-sekolah': 'Web sekolah',
+  'web-sekolah': 'Website',
+  data: 'Data Warehouse',
 };
 
-const { name, href, description, type, url } = Astro.props;
-const label = type && typeLabel[type] ? typeLabel[type] : 'Produk';
+const { name, href, description, type, url, label: labelOverride } = Astro.props;
+const label = labelOverride ?? (type && typeLabel[type] ? typeLabel[type] : 'Produk');
 const dataType = type ?? 'produk';
 
 // Initials for the visual header (first letter of each word, max 2)

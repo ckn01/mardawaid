@@ -2,22 +2,52 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import ProductCard from '../../components/ProductCard.astro';
-import services from '../../data/services-portfolio.json';
+import ServiceCategoryBar from '../../components/ServiceCategoryBar.astro';
+import services from '../../data/services.json';
+import CtaBand from '../../components/CtaBand.astro';
+
+const countByType = (t: string) => (t === 'all' ? services.length : services.filter((s) => s.type === t).length);
+
+const categories = [
+  { name: 'Semua', description: 'Seluruh layanan', icon: 'all' as const, type: 'all', count: countByType('all') },
+  { name: 'Sistem Informasi Manajemen', description: 'Sistem operasional & manajerial', icon: 'system' as const, type: 'sistem', count: countByType('sistem') },
+  { name: 'Website', description: 'Portal & website siap publik', icon: 'website' as const, type: 'web-sekolah', count: countByType('web-sekolah') },
+  { name: 'Aplikasi Mobile', description: 'Aplikasi Android interaktif', icon: 'mobile' as const, type: 'aplikasi', count: countByType('aplikasi') },
+  { name: 'Data Warehouse', description: 'Integrasi data lintas unit', icon: 'data' as const, type: 'data', count: countByType('data') },
+];
 ---
-<BaseLayout title="Layanan" description="Portfolio layanan sistem informasi PT. Mardawa.">
+<BaseLayout title="Layanan" description="Layanan pengembangan sistem informasi, website, aplikasi mobile, dan data warehouse PT. Mardawa.">
   <PageHero
     title="Layanan"
-    subtitle="Sistem dan solusi yang kami bangun untuk instansi dan mitra."
+    subtitle="Layanan teknologi informasi yang kami sediakan untuk instansi, perusahaan, dan mitra."
   />
   <section class="section">
-    <div class="container-site grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-      {services.map((s) => (
-        <ProductCard
-          name={s.name}
-          description={s.description}
-          href={`/layanan/${s.slug}`}
-        />
-      ))}
+    <div class="container-site">
+      <div class="mb-8">
+        <p class="section-label">Kategori</p>
+      </div>
+      <ServiceCategoryBar items={categories} itemLabel="layanan" />
+
+      <div class="mt-16 mb-8 flex items-end justify-between gap-4">
+        <div>
+          <p class="section-label">Layanan</p>
+          <h2 class="section-title">Layanan yang kami tawarkan</h2>
+        </div>
+        <p class="hidden text-sm text-[var(--color-muted)] sm:block" data-product-count data-item-label="layanan">
+          {services.length} layanan
+        </p>
+      </div>
+      <div class="grid gap-5 grid-cols-2 lg:grid-cols-3" data-product-grid>
+        {services.map((s) => (
+          <ProductCard
+            name={s.name}
+            description={s.description}
+            href={`/layanan/${s.slug}`}
+            type={s.type}
+          />
+        ))}
+      </div>
     </div>
   </section>
+  <CtaBand />
 </BaseLayout>

@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import { waLink } from '../utils/site';
+import CtaBand from '../components/CtaBand.astro';
 ---
 <BaseLayout title="Pelatihan" description="Program pelatihan PT. Mardawa Intiguna Persada.">
   <PageHero
@@ -10,7 +11,7 @@ import { waLink } from '../utils/site';
   />
   <section class="section">
     <div class="container-site">
-      <div class="max-w-3xl">
+      <div class="max-w-full">
         <p class="max-w-[var(--measure)] text-[var(--text-lg)] leading-relaxed text-[var(--color-ink-2)]">
           Kami mendukung transfer pengetahuan untuk tim internal, operator sistem, dan unit kerja
           yang memakai produk atau layanan Mardawa.
@@ -48,4 +49,5 @@ import { waLink } from '../utils/site';
       </div>
     </div>
   </section>
+  <CtaBand />
 </BaseLayout>

@@ -19,10 +19,11 @@ interface Category {
 
 interface Props {
   items: Category[];
+  /** noun used in the live count (e.g. "produk", "layanan"); defaults to "produk" */
+  itemLabel?: string;
 }
 
-const { items } = Astro.props;
-console.log(items)
+const { items, itemLabel = 'produk' } = Astro.props;
 ---
 
 <div
@@ -176,7 +177,7 @@ console.log(items)
           card.hidden = !match;
           if (match) shown++;
         });
-        if (counter) counter.textContent = `${shown} produk`;
+        if (counter) counter.textContent = `${shown} ${counter.dataset.itemLabel ?? 'produk'}`;
       });
     });
   }

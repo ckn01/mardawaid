@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import ClientGrid from '../components/ClientGrid.astro';
 import clients from '../data/clients.json';
+import CtaBand from '../components/CtaBand.astro';
 ---
 <BaseLayout title="Klien & Mitra">
   <PageHero
@@ -10,4 +11,5 @@ import clients from '../data/clients.json';
     subtitle="Kami memiliki beberapa klien dari berbagai instansi dan perusahaan."
   />
   <ClientGrid items={clients} bare />
+  <CtaBand />
 </BaseLayout>

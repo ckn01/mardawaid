@@ -4,6 +4,7 @@ import PageHero from '../../components/PageHero.astro';
 import ProductCard from '../../components/ProductCard.astro';
 import ServiceCategoryBar from '../../components/ServiceCategoryBar.astro';
 import products from '../../data/products.json';
+import CtaBand from '../../components/CtaBand.astro';
 
 const countByType = (t: string) => (t === 'all' ? products.length : products.filter((p) => p.type === t).length);
 
@@ -50,4 +51,5 @@ const categories = [
       </div>
     </div>
   </section>
+  <CtaBand />
 </BaseLayout>

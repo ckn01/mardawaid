@@ -1,22 +1,30 @@
 [
   {
-    "name": "Website/Portal",
-    "description": "Kami hadir untuk membantu perusahaan/instansi anda dalam mendesain berbagai macam website/portal sesuai dengan kebutuhan anda",
-    "icon": "monitor"
+    "name": "Sistem Informasi Manajemen",
+    "slug": "sistem-informasi-manajemen",
+    "type": "sistem",
+    "description": "Kami menyediakan layanan pembuatan sistem informasi manajemen untuk kepentingan umum, manajerial, dan berbagai kepentingan lainnya.",
+    "icon": "system"
   },
   {
-    "name": "Sistem Informasi Manajemen",
-    "description": "Kami menyediakan layanan pembuatan sistem informasi manajemen untuk kepentingan umum, manajerial, dan berbagai kepentingan lainnya",
-    "icon": "monitor"
+    "name": "Website/Portal",
+    "slug": "website-portal",
+    "type": "web-sekolah",
+    "description": "Kami hadir untuk membantu perusahaan/instansi anda dalam mendesain berbagai macam website/portal sesuai dengan kebutuhan anda.",
+    "icon": "website"
   },
   {
     "name": "Aplikasi Mobile / Android",
-    "description": "Kami hadir untuk membantu anda dalam menciptakan sebuah aplikasi mobile/android yang interaktif sesuai dengan kebutuhan anda",
-    "icon": "monitor"
+    "slug": "aplikasi-mobile-android",
+    "type": "aplikasi",
+    "description": "Kami hadir untuk membantu anda dalam menciptakan sebuah aplikasi mobile/android yang interaktif sesuai dengan kebutuhan anda.",
+    "icon": "mobile"
   },
   {
     "name": "Data Warehouse",
-    "description": "Solusi untuk mengintegrasikan berbagai data perusahaan/instansi anda ke dalam satu teknologi Data Warehouse",
-    "icon": "monitor"
+    "slug": "data-warehouse",
+    "type": "data",
+    "description": "Solusi untuk mengintegrasikan berbagai data perusahaan/instansi anda ke dalam satu teknologi Data Warehouse.",
+    "icon": "data"
   }
 ]
